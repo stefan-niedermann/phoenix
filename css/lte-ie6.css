@@ -1,0 +1,59 @@
+blockquote {
+	border: none;
+	background: transparent;
+	font-style: italic;
+}
+
+header#masthead nav ul li a.act:hover {
+	filter: none;
+	background: #f5f5f5;
+}
+/*
+.content .news li {width: 430px;}
+.content .news li img.vorschau {width: 150px;}
+
+.content #geschichte img {width: 360px;}
+.content #jugend-aktivitaeten img {height: 150px;}
+
+.content .posts li {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.content .posts li .post-zp {
+	position: relative;
+	top: -21px;
+	left: -10px;
+}
+
+.content #links h2 {
+	background: #600;
+	color: #fff;
+	margin-bottom: 0;
+	padding: 5px 10px;
+	font-size: 2px;
+}
+.content #links ul {padding-left: 20px;}
+.content #links li ul li {margin-top: 5px;}
+
+
+.fancybox-ie6 #fancybox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_close.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_nav_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancy_title_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
+height: expression(this.parentNode.clientHeight + "px");
+}
+
+#fancybox-loading.fancybox-ie6 {
+position: absolute; margin-top: 0;
+top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
+}
+
+#fancybox-loading.fancybox-ie6 div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./style/screen/fancybox/fancy_loading.png', sizingMethod='scale'); }
+*/

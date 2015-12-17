@@ -1,0 +1,39 @@
+.post-nav a {display: inline-block; margin-left: 10px; margin-bottom: 5px;}
+.post-nav a:first-child {margin-left: 0;}
+.post-nav a:first-child::before {content : "« "}
+
+
+.site-content {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	width: 75%;
+	clear: both;
+}
+.site-content .entry-content {
+	margin-top: 0;
+}
+.site-content .entry-content p {
+	margin-top: 0;
+}
+/* Bild oben rechts */
+.wp-post-image {margin-top: 10px; height: inherit;}
+
+
+@media only screen and (max-width: 800px) {
+	.single #primary {
+		width: 70%;
+	}
+	
+	.single #secondary {
+		width: 30%;
+	}
+}
+
+@media only screen and (max-width: 640px){
+	.single #secondary, .single #primary {
+		width: 100%;
+	}
+	
+	.single #secondary {padding-left: 0;}
+}
