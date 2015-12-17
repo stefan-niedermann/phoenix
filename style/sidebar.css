@@ -1,0 +1,47 @@
+main .sidebar aside h3 {
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	background-color: #600;
+	background-image: -webkit-linear-gradient(top, #600 0%, #500 50%, #400 70%, #300 100%);
+	background-image: linear-gradient(to bottom, #600 0%, #500 50%, #400 70%, #300 100%);
+}
+main .sidebar .textwidget ul {
+    border-radius: 5px;
+    border: 1px solid #600;
+    background: none repeat scroll 0% 0% #EEE;
+    padding: 10px 10px 10px 30px;
+}
+main .sidebar img.wp-post-image {
+	width: 100%;
+	height: auto;
+	float: none;
+}
+
+@media (min-width: 1024px) {
+	main > article,
+	main > .sidebar {
+		box-sizing: border-box;
+	}
+	main > article {
+		width: 80%;
+		float: left;
+		padding-right: 1rem;
+		
+	}
+	main > .sidebar {
+		width: 20%;
+		float: right;
+		margin: -1rem 0 -1rem;
+	}
+}
+@media (min-width: 1280px) {
+	main > article {
+		width: 75%;
+	}
+	main > .sidebar {
+		width: 25%;
+	
+}

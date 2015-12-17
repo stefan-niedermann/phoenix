@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: News-Page
- * Redirect to current news-page
+ * Template Name: News-Weiterleitung
+ * Leitet die zur aktuellen News-Übersicht weiter.
  */
 header( 'Location: /news/'.date('Y'));
