@@ -4,7 +4,7 @@
  * Author: Niedermann IT-Dienstleistungen
  * Author URI: http://www.niedermann.it/
  * Description: Mobile First Phoenix Theme for Freiwillige Feuerwehr Barthelmesaurach e. V.. This Theme depends on catlist-Plug-In for Wordpress.
- * Version: 0.2.15
+ * Version: 0.2.16
  * License: Closed Source
  * License URI: 
  */
@@ -23,7 +23,7 @@
 body {
 	margin: 0;
 	background: #424f5a;
-	font-size: .9rem;
+	font-size: .95rem;
 }
 p {text-align: justify;}
 .wp-caption-text {text-align: center;}
@@ -90,9 +90,9 @@ table.colored tbody tr {
 	transition: background 0.2s;
 	background-color: #eee;
 }
-table.colored tbody tr:nth-child(2n+1) {background: #e5e5e5;}
+table.colored tbody tr:nth-child(2n+1) {background-color: transparent;}
 table.colored tbody tr:first-child {border-top: 0;}
-table.colored tbody tr:hover {background: #e0e0e0;}
+table.colored tbody tr:hover {background-color: #e5e5e5;}
 table.colored tbody tr td {padding: .5rem .5rem;}
 
 /* ul.lv-link-list for Links Page, catlist-Plug-In Dependency */
@@ -106,11 +106,11 @@ ul.colored li, ol.colored li, ul.lv-link-list li {
 	border-top: 1px solid #ccc;
 	padding: .5rem;
 	transition: background 0.2s;
-	background: #eee;
+	background-color: #eee;
 }
 ul.colored li:first-child, ol.colored li:first-child, ul.lv-link-list li:first-child {border-top: 0;}
-ul.colored li:nth-child(2n+1), ol.colored li:nth-child(2n+1), ul.lv-link-list li:nth-child(2n+1) {background: #e5e5e5;}
-ul.colored li:hover, ol.colored li:hover, ul.lv-link-list li:hover {background: #e0e0e0;}
+ul.colored li:nth-child(2n+1), ol.colored li:nth-child(2n+1), ul.lv-link-list li:nth-child(2n+1) {background-color: transparent;}
+ul.colored li:hover, ol.colored li:hover, ul.lv-link-list li:hover {background-color: #e5e5e5;}
 .wrapper {margin-top: 56px;}
 .wrapper > header {
 	color: #fff;
@@ -290,6 +290,11 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 	padding: 0;
 }
 .commentlist .nocomments {display: none;}
+.comment-form p {clear: both;}
+.comment-form .comment-form-author {
+	padding-top: 10px;
+}
+.comment-form label {padding: .3rem 0;}
 .comment-form label + * {display: block;}
 .comment-form input,
 .comment-form textarea {width: 100%}
@@ -450,11 +455,11 @@ html body #gallery-1 img {
 		border-top: 1px solid #ccc;
 		padding: .5rem;
 		transition: background 0.2s;
-		background: #eee;
-			width: 50%;
-			display: inline-block;
-			box-sizing: border-box;
-			float: left;
+		background-color: #eee;
+		width: 50%;
+		display: inline-block;
+		box-sizing: border-box;
+		float: left;
 	}
 	ul.colored li:nth-child(2),
 	ol.colored li:nth-child(2),
@@ -467,10 +472,10 @@ html body #gallery-1 img {
 	ol.colored li:nth-child(4n),
 	ol.colored li:nth-child(4n+3),
 	ul.lv-link-list li:nth-child(4n),
-	ul.lv-link-list li:nth-child(4n+3) {background:#e5e5e5;}
+	ul.lv-link-list li:nth-child(4n+3) {background-color: transparent;}
 	ul.colored li:hover,
 	ol.colored li:hover,
-	ul.lv-link-list li:hover {background: #e0e0e0;}
+	ul.lv-link-list li:hover {background-color: #e5e5e5;}
 	ul.colored::after,
 	ol.colored::after,
 	ul.lv-link-list::after {
