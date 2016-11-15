@@ -6,6 +6,7 @@
 // Search Style
 wp_enqueue_style('search', get_template_directory_uri().'/search.css' );
 get_header(); ?>
+<main>
 <?php if ( have_posts() ) { ?>
 	<?php while ( have_posts() ) { the_post();
 		$thumbnail = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
@@ -43,5 +44,8 @@ get_header(); ?>
 		echo '</div></article>';
 	}
 }
+?>
+</main>
+<?php
 get_footer();
 ?>

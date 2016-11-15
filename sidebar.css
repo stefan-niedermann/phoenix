@@ -4,14 +4,14 @@ main .sidebar aside h3 {
 	text-align: center;
 	font-size: 16px;
 	color: #fff;
-	background-color: #600;
-	background-image: -webkit-linear-gradient(top, #600 0%, #500 50%, #400 70%, #300 100%);
-	background-image: linear-gradient(to bottom, #600 0%, #500 50%, #400 70%, #300 100%);
+	background-color: #400;
+/*	background-image: -webkit-linear-gradient(top, #600 0%, #500 50%, #400 70%, #300 100%);
+	background-image: linear-gradient(to bottom, #600 0%, #500 50%, #400 70%, #300 100%);*/
 }
 main .sidebar .textwidget ul {
-    border-radius: 5px;
-    border: 1px solid #600;
-    background: none repeat scroll 0% 0% #EEE;
+    border-radius: 2px;
+    border: 1px solid #bbb;
+    box-shadow: 2px 3px 3px #bbb;
     padding: 10px 10px 10px 30px;
 }
 main .sidebar img.wp-post-image {

@@ -20,11 +20,24 @@ if(!is_year()) {
 }
 
 get_header();
-
-echo '<nav class="breadcrumbs">';
-echo 'News » '.$requestedYear;
-echo '</nav>';
 ?>
+<main>
+	<nav class="breadcrumbs">
+		<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+			<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+				<a href="/news" itemprop="item">
+					<span itemprop="name">News</span>
+					<meta itemprop="position" content="1" />
+				</a>
+			</li>
+			<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+				<a href="/news/<?php echo $requestedYear; ?>" itemprop="item">
+					<span itemprop="name"><?php echo $requestedYear; ?></span>
+					<meta itemprop="position" content="2" />
+				</a>
+			</li>
+		</ol>
+	</nav>
 	<section>
 		<header>
 			<?php
@@ -65,7 +78,7 @@ echo '</nav>';
 					<h1>
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h1>
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large"); ?></a>
 				</header>
 				<div>
 					<?php the_excerpt(); ?>
@@ -126,4 +139,5 @@ echo '</nav>';
 		?>
 		</footer>
 	</section>
+</main>
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@ wp_enqueue_script( 'single', get_template_directory_uri() . '/single.js', array(
 
 /* Set News to current Menu Item */
 add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
-wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/style/sidebar.css' );
+wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/sidebar.css' );
 
 get_header();
 
@@ -19,19 +19,38 @@ $currentPost = get_post();
 $creationDateObject = new DateTime($currentPost->post_date);
 $creationYear = $creationDateObject->format('Y');
 
-echo '<nav class="breadcrumbs">';
-echo 'News &raquo; <a href="/news/'.$creationYear.'">'.$creationYear.'</a> &raquo; '.$currentPost->post_title;
-echo '</nav>';
-echo '<nav class="post-nav"><a href="/news/'.$creationYear.'" class="button">Alle Artikel aus '.$creationYear.'</a></nav>';
+?>
+<main>
+<nav class="breadcrumbs">
+	<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+		<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+			<a href="/news" itemprop="item">
+				<span itemprop="name">News</span>
+				<meta itemprop="position" content="1" />
+			</a>
+		</li>
+		<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+			<a href="/news/<?php echo $creationYear; ?>" itemprop="item">
+				<span itemprop="name"><?php echo $creationYear; ?></span>
+				<meta itemprop="position" content="2" />
+			</a>
+		</li>
+		<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem">
+			<a href="<?php echo get_permalink(); ?>" itemprop="item">
+				<span itemprop="name"><?php echo $currentPost->post_title; ?></span>
+				<meta itemprop="position" content="3" />
+			</a>
+		</li>
+	</ol>
+</nav>
+<nav class="post-nav">
+	<a href="/news/<?php echo $creationYear; ?>" class="button">Alle Artikel aus <?php echo $creationYear; ?></a>
+</nav>
+<?php
 while ( have_posts() ) : the_post(); ?>
 	<article>
 		<header>
 			<h1><?php the_title(); ?></h1>
-			<?php $date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() )
-			);
-		echo $date; ?>
 		</header>
 		<?php if(!empty($currentPost->post_excerpt)) : ?>
 	        <strong class="entry-summary">
@@ -44,4 +63,7 @@ while ( have_posts() ) : the_post(); ?>
 echo "<div class=\"sidebar\">";
 dynamic_sidebar("post-sidebar");
 echo "</div>";
+?>
+</main>
+<?php
 get_footer(); ?>

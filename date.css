@@ -18,7 +18,8 @@ main section header::after {
 main article {
 	margin-bottom: 1rem;
 	border: 1px solid rgb(204, 204, 204);
-	border-radius: .5rem;
+	border-radius: 2px;
+	box-shadow: 2px 3px 3px rgb(204, 204, 204);
 	padding: 1rem;
 	background: #fff;
 }
@@ -41,23 +42,37 @@ main article footer {
 }
 .button.prev {float: right;}
 .button.prev::after {
-	content: "»";
+	background-image: url("img/arrow-right.svg");
+	background-size: 100% 100%;
+	vertical-align: middle;
+	content: "";
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
 	margin-left: .5em;
 }
 .button.next {float: left;}
 .button.next::before {
-	content: "«";
+	background-image: url("img/arrow-left.svg");
+	background-size: 100% 100%;
+	vertical-align: middle;
+	content: "";
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
 	margin-right: .5em;
 }
 
 @media (min-width: 768px) {
 	main section .articles {
-	    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-	    -moz-column-count: 2; /* Firefox */
-	    column-count: 2;
-	    -webkit-column-gap: 1rem; /* Chrome, Safari, Opera */
-	    -moz-column-gap: 1rem; /* Firefox */
-	    column-gap: 1rem;
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+		-moz-column-count: 2; /* Firefox */
+		column-count: 2;
+		-webkit-column-gap: 1rem; /* Chrome, Safari, Opera */
+		-moz-column-gap: 1rem; /* Firefox */
+		column-gap: 1rem;
+		-moz-column-fill: balance;
+		column-fill: balance;
 	}
 
 	main section .articles article {

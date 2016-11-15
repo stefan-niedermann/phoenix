@@ -4,7 +4,7 @@
  * Author: Niedermann IT-Dienstleistungen
  * Author URI: http://www.niedermann.it/
  * Description: Mobile First Phoenix Theme for Freiwillige Feuerwehr Barthelmesaurach e. V.. This Theme depends on catlist-Plug-In for Wordpress.
- * Version: 0.2.16
+ * Version: 0.2.18
  * License: Closed Source
  * License URI: 
  */
@@ -20,6 +20,16 @@
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
+
+::-moz-selection {
+	color: #fff;
+	background: #400;
+}
+::selection {
+	color: #fff;
+	background: #400;
+} 
+
 body {
 	margin: 0;
 	background: #424f5a;
@@ -30,6 +40,41 @@ p {text-align: justify;}
 a {
 	color: inherit;
 	text-decoration: none;
+}
+a[target="_blank"]::after {
+	content: '';
+	display: inline-block;
+	margin-left: .2em;
+	position: relative;
+	top: 2px;
+	width: 1rem;
+	height: 1rem;
+	background-image: url('img/link.svg');
+	background-size: 100% 100%;
+}
+a.pdf-download {
+	padding-right: 1rem;
+	display: inline-block;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	box-sizing: border-box;
+	width: 100%;
+}
+a.pdf-download:hover {
+	border-color: #bbb;
+	text-decoration: none;
+}
+a.pdf-download::before {
+	content: "";
+	width: 3rem;
+	height: 3rem;
+	display: inline-block;
+	background-image: url(./img/file-pdf.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: .5;
+	vertical-align: middle;
+	margin-right: 1rem;
 }
 img, textarea {
 	max-width: 100%;
@@ -56,9 +101,9 @@ input, textarea, select {
 blockquote {
 	font-style: italic;
 	margin: auto;
-	border: 1px solid #ccc;
-	border-left-width: 5px;
-	border-radius: 3px;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+	box-shadow: 2px 3px 3px #bbb;
 	padding: 10px;
 	overflow: hidden;
 	background: #fff;
@@ -77,11 +122,9 @@ table.colored {
 	border-spacing: 0;
 }
 table.colored thead tr th {
-	padding: .3rem .5rem;
+	padding: .5rem;
 	color: #fff;
-	background: #600;
-	background: linear-gradient(to bottom, #600 0, #500 50%, #400 70%, #300 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#330000',GradientType=0 ); /* IE6-9 */
+	background: #400;
 }
 table.colored thead tr:first-child th:first-child {border-top-left-radius: .5rem;}
 table.colored thead tr:first-child th:last-child {border-top-right-radius: .5rem;}
@@ -107,10 +150,25 @@ ul.colored li, ol.colored li, ul.lv-link-list li {
 	padding: .5rem;
 	transition: background 0.2s;
 	background-color: #eee;
+	overflow: hidden;
 }
 ul.colored li:first-child, ol.colored li:first-child, ul.lv-link-list li:first-child {border-top: 0;}
 ul.colored li:nth-child(2n+1), ol.colored li:nth-child(2n+1), ul.lv-link-list li:nth-child(2n+1) {background-color: transparent;}
 ul.colored li:hover, ol.colored li:hover, ul.lv-link-list li:hover {background-color: #e5e5e5;}
+ul.chips {
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+ul.chips li {
+	margin: .5rem 0 0 0;
+	border: 1px solid #ddd;
+	padding: .5rem 1rem;
+	box-shadow: 2px 3px 3px #ddd;
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+}
 .wrapper {margin-top: 56px;}
 .wrapper > header {
 	color: #fff;
@@ -133,10 +191,8 @@ ul.colored li:hover, ol.colored li:hover, ul.lv-link-list li:hover {background-c
 	text-overflow: ellipsis;
 	box-sizing: border-box;
 	background: #400;
-	background: linear-gradient(to bottom, #600 0, #500 50%, #400 70%, #300 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#330000',GradientType=0 ); /* IE6-9 */
 }
-.wrapper > header > .logo, body header > .wappen, body header > h2 {display: none;}
+.wrapper > header .logo, body header .wappen, body header h2 {display: none;}
 .wrapper > header .searchform button[type="submit"] {display: none;}
 .js .wrapper > header .searchform > button,
 .js .wrapper > nav > button {
@@ -213,7 +269,7 @@ ul.colored li:hover, ol.colored li:hover, ul.lv-link-list li:hover {background-c
 	background: linear-gradient(to right, rgb(52, 63, 72) 0, rgb(52, 63, 72) 70%, transparent 100%) repeat scroll 0 0 transparent;
 }
 .wrapper .content-container {
-	background-color: #fbfbfb;
+	background-color: #fff;
 	color: #333;
 	padding: 1rem;
 }
@@ -230,9 +286,20 @@ main h1 {
 	font-size: 1.6rem;
 }
 .home main h1 {margin: 0;}
+main nav.breadcrumbs ol {
+  padding: 0;
+  margin: 0;
+}
+main nav.breadcrumbs ol li::after {
+  content : "»"
+}
+main nav.breadcrumbs ol li:last-child::after {
+  content: "";
+}
 main article .entry-content ol:first-child, main .breadcrumbs {
+	background-color: #eee;
 	margin: -1rem -1rem 1rem -1rem;
-	border-bottom: 1px solid #300;
+	border-bottom: 1px solid #aaa;
 	padding: .5rem;
 }
 main article .entry-content ol:first-child li, main .breadcrumbs li {
@@ -250,9 +317,7 @@ main .aligncenter {
 main img.alignright {margin: 1rem 0 1rem 1rem;}
 main img.alignleft {margin: 1rem 1rem 1rem 0;}
 .wrapper > footer {
-	background: #600;
-	background: linear-gradient(to bottom, #300 0, #400 30%, #500 50%, #600 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#330000', endColorstr='#660000',GradientType=0 ); /* IE6-9 */
+	background: #400;
 	color: #fff;
 }
 .wrapper > footer::after {
@@ -268,7 +333,7 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 }
 .wrapper > footer ul li a {
 	color: inherit;
-	padding: 1rem 1.5rem;
+	padding: 1rem;
 	width: 100%;
 	display: inline-block;
 	box-sizing: border-box;
@@ -299,7 +364,7 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 .comment-form input,
 .comment-form textarea {width: 100%}
 .comment-form .form-submit[type="submit"] {
-	background: #600;
+	background: #400;
 	color: #fff;
 	width: auto;
 	float: right;
@@ -309,9 +374,17 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 	padding: 5px 10px;
 }
 .comment-form::after {content: ""; display: block; clear: both;}
+#commentform input[type="submit"] {
+    background: #400;
+    color: #fff;
+    border-radius: 4px;
+    border: 0;
+    width: 35%;
+}
 .comment-body {
-	border: 1px solid #BBB;
-	border-radius: .5rem;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+	box-shadow: 2px 3px 3px #bbb;
 	margin: 1rem 0;
 	padding: 1rem;
 	background-color: #fff;
@@ -330,18 +403,19 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 	cursor: pointer;
 	user-select: none;
 	color: #fff;
-	background: #600;
+	background: #400;
 	width: auto;
 }
 .wrapper .content-container a.button:hover {text-decoration: none;}
-#vorstaende {text-align: center;}
-#vorstaende .wp-caption {
+.vorstaende {text-align: center;}
+.vorstaende .wp-caption {
 	display: inline-block;
 	vertical-align: top;
 	margin: .5rem 1.5rem;
 }
-#vorstaende .wp-caption img {
+.vorstaende .wp-caption img {
 	box-shadow: 4px 4px 2px #777;
+	width: 100px;
 }
 .js .wrapper .searchform  button {
 	z-index: 1;
@@ -401,18 +475,26 @@ html body #gallery-1 img {
 	.wrapper > nav ul li a {width:25%;}
 	.wrapper > footer {padding: 1rem 0;}
 	.wrapper > footer ul li a {width: 50%;}
+	a.pdf-download {
+		width: auto;
+	}
 }
 
 @media (min-width: 640px) {
 	main article img {width: auto;}
 	.wrapper > footer {padding: 2rem 0;}
-	.wrapper > footer ul li a {width: 25%;}
+	.wrapper > footer ul li a {width: 20%;}
 	#commentform input,
 	#commentform textarea {width: 80%; float: right;}
 	#commentform label {display: inline-block; width: 20%;}
+	ul.chips li {
+		margin-right: .5rem;
+		width: auto;
+	}
+	ul.chips li:last-child {margin-right: 0;}
 }
 
-@media (min-width: 700px) {
+@media (min-width: 815px) {
 	.wrapper > nav ul li a {
 		width: 14.2%;
 		width: calc(100% / 7);
@@ -420,7 +502,6 @@ html body #gallery-1 img {
 }
 
 @media (min-width: 1024px) {
-	body {background-color: #600;}
 	.wrapper > nav > button {display: none;}
 	.wrapper > nav ul li a {
 		width: 100%;
@@ -500,6 +581,161 @@ html body #gallery-1 img {
 
 @media (min-width: 1280px) {
 	body {
+		background: #300;
+	}
+	.wrapper {
+		margin: 0;
+	}
+	.wrapper > header {
+		position: static;
+		background: #400;
+	}
+	.wrapper > header > .header-inner {
+		padding: .5rem 0;
+		width: 1024px;
+		margin: auto;
+		position: relative;
+	}
+	.wrapper > header > .header-inner:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	.wrapper > header .logo,
+	.wrapper > header .wappen,
+	.wrapper > header h2 {display: block;}
+	.wrapper > header .logo {float: left; margin: 1rem 2rem 1rem 0;width: 100px;}
+	.wrapper > header .wappen {display: none;}
+	.wrapper > header h1 {
+		background: none;
+		font-size: 2rem;
+		line-height: initial;
+		height: auto;
+		margin-top: 2rem;
+		position: static;
+		width: auto;
+	}
+	.wrapper > header h2 {
+		font-variant: small-caps;
+		margin: 0;
+	}
+	.wrapper > header .searchform {
+		position: absolute;
+		right: 0px;
+		top: 2rem;
+	}
+	.wrapper > header .searchform > button {display: none;}
+	.wrapper > header .searchform fieldset,
+	.wrapper > header .searchform.collapsed fieldset {
+		display: block;
+		box-shadow: none;
+		margin-top: 1.5rem;
+	}
+	.wrapper > header .searchform fieldset input {
+		width: 15rem;
+		background-color: #300;
+		color: #fff;
+		border-color: #200;
+		border-radius: 2px;
+	}
+	.wrapper > header .searchform fieldset button,
+	.wrapper > header .searchform.collapsed fieldset button {
+		background: none;
+		display: inline-block;
+		border: 0;
+		padding: .3rem 1rem;
+	}
+	.wrapper > header .searchform button[type="submit"] {
+		visibility: hidden;
+	}
+	.wrapper > header .searchform button[type="submit"]:focus {
+		visibility: visible;
+		width: 5rem;
+	}
+	.wrapper > nav {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
+	}
+	.wrapper > nav > .menu-hauptmenue-container {
+		height: auto;
+		position: static;
+		overflow: hidden;
+		background: #300;
+		text-align: center;
+		width: 100%;
+	}
+	.wrapper > nav ul {
+		width: 1024px;
+		margin: auto;
+	}
+	.wrapper > nav ul li {
+		margin: 0 2px;
+		display: inline-block;
+		width: 12%;
+	}
+	.wrapper > nav ul li a {
+		color: #fff;
+		border: 0;
+		padding: .5rem;
+		float: none;
+		font-variant: small-caps;
+	}
+	.wrapper > nav ul li a:hover {text-decoration: none;}
+	.wrapper > nav ul li.current_page_item a {
+		background: none;
+		font-weight: bold;
+		border-bottom: 2px solid #fff;
+	}
+	.wrapper > .content-container {
+		background-color: #999;
+		background-image: url("http://www.feuerwehr-aurachhöhe.de/wp-content/themes/phoenix/img/brushed-metal.jpg");
+	}
+	.wrapper main {
+		width: 1024px;
+		margin: auto;
+		border-radius: 2px;
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+		background: #fff;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+	.wrapper main::after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+	.wrapper > header > form,
+	.wrapper > footer,
+	.wrapper > .content-container {
+		box-sizing: border-box;
+		width: 100%;
+		float: none;
+		margin-top: 0;
+	}
+	.wrapper > footer {
+		background: #300;
+	}
+	.wrapper > footer > .menu-fussmenue-container {
+		width: 1024px;
+		margin: auto;
+	}
+	.js .wrapper > header h1 {
+		padding: 0;
+		width: auto;
+	}
+	.js .wrapper .searchform button {position: absolute;}
+	.js .wrapper > header .searchform.collapsed fieldset,
+	.js .wrapper > nav.collapsed .menu-hauptmenue-container {display: block;}
+	.js .wrapper > nav > .menu-hauptmenue-container {
+		width: auto;
+		position: static;
+	}
+}
+/*
+@media (min-width: 1280px) {
+	body {
 		background-image: url("./img/brushed-metal.jpg");
 	}
 	.wrapper {
@@ -514,8 +750,10 @@ html body #gallery-1 img {
 		background: #400;
 		background: linear-gradient(to bottom, #600 0, #500 50%, #400 70%, #300 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#660000', endColorstr='#330000',GradientType=0 ); /* IE6-9 */
-		border-top-left-radius: 1rem;
+/*		border-top-left-radius: 1rem;
 		border-top-right-radius: 1rem;
+	}
+	.wrapper > header > .header-inner {
 		padding: .5rem 0;
 	}
 	.wrapper > header::after {
@@ -523,11 +761,11 @@ html body #gallery-1 img {
 		display: block;
 		clear: both;
 	}
-	.wrapper > header > .logo,
-	.wrapper > header > .wappen,
-	.wrapper > header > h2 {display: block;}
-	.wrapper > header > .logo {float: left; margin: 1rem 0 0 2rem;}
-	.wrapper > header > .wappen {float: right; margin: 1rem 3rem 0 0;}
+	.wrapper > header .logo,
+	.wrapper > header .wappen,
+	.wrapper > header h2 {display: block;}
+	.wrapper > header .logo {float: left; margin: 1rem 0 0 2rem;width: 130px;}
+	.wrapper > header .wappen {float: right; margin: 1rem 3rem 0 0;}
 	.wrapper > header h1 {
 		background: none;
 		font-size: 2rem;
@@ -545,7 +783,8 @@ html body #gallery-1 img {
 		box-shadow: none;
 		margin-top: 1.5rem;
 	}
-	.wrapper > header .searchform fieldset input {width: 15rem; border-radius: 2px;}
+	/*.wrapper > header .searchform fieldset {width: 15rem; margin-left: auto; margin-right: auto; position: relative;}*/
+/*	.wrapper > header .searchform fieldset input {width: 15rem;border-radius: 2px;}
 	.wrapper > header .searchform           fieldset button,
 	.wrapper > header .searchform.collapsed fieldset button {
 		background: none;
@@ -577,10 +816,10 @@ html body #gallery-1 img {
 		background-color: #ccc;
 		background: linear-gradient(to bottom, #CCC 0, #BBB 50%, #999 70%, #333 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#777777',GradientType=0 ); /* IE6-9 */
-	}
+/*	}
 	.wrapper > nav ul li a:hover {text-decoration: none;}
 	.wrapper > nav ul li.current_page_item a {
-		background: #fbfbfb;
+		background: #fff;
 		font-weight: bold;
 		color: #111;
 	}
@@ -607,4 +846,23 @@ html body #gallery-1 img {
 		width: auto;
 		position: static;
 	}
+}*/
+
+/************************************** TEST **
+.wrapper > header .searchform fieldset button {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/12/Right_arrow.svg) !important;;
+  background-size: 100% 100% !important;;
+  vertical-align: middle;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  padding:0 !important;;
+  margin:.45rem;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  right:0;
+  opacity: .7;
 }
+**********************************************/
