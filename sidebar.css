@@ -1,18 +1,25 @@
+/**
+ * Template Name: Sidebar
+ */
+
 main .sidebar aside h3 {
-	border-radius: 5px;
+	border-radius: 2px;
 	padding: 5px;
 	text-align: center;
 	font-size: 16px;
+	font-weight: normal;
 	color: #fff;
 	background-color: #400;
-/*	background-image: -webkit-linear-gradient(top, #600 0%, #500 50%, #400 70%, #300 100%);
-	background-image: linear-gradient(to bottom, #600 0%, #500 50%, #400 70%, #300 100%);*/
 }
+main .sidebar .textwidget p,
 main .sidebar .textwidget ul {
     border-radius: 2px;
     border: 1px solid #bbb;
     box-shadow: 2px 3px 3px #bbb;
-    padding: 10px 10px 10px 30px;
+    padding: 10px;
+}
+main .sidebar .textwidget ul {
+	padding-left: 30px;
 }
 main .sidebar img.wp-post-image {
 	width: 100%;

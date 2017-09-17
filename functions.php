@@ -2,6 +2,7 @@
 /**
  * Template Name: Theme-Funktionen
  */
+
 	// Remove Generator-Tag in HTML Markup
 	remove_action("wp_head", "wp_generator");
 
@@ -103,4 +104,29 @@
 		}
 		return $ids;
 	}
+
+	// Tabellenkopf und -fuß um Felder erweitern
+	function phoenix_edit_admin_columns($columns) {
+		// TODO Vielleicht kann man die neue Spalte auch in $columns pushen?
+		return array(
+			'cb' => '<input type="checkbox" />',
+			'title' => __('Title'),
+			'source' => 'Quelle',
+			'author' => __('Author'),
+			'comments' => '<span class="vers comment-grey-bubble" title="' . __( 'Comments' ) . '"><span class="screen-reader-text">' . __( 'Comments' ) . '</span></span>',
+			'date' => __('Date')
+		);
+	}
+	add_filter('manage_edit-post_columns', 'phoenix_edit_admin_columns');
+
+	// Inhalte aus benutzerdefinierten Feldern auslesen und den Spalten hinzufügen
+	function phoenix_post_custom_columns($column) {
+		global $post;
+		switch ($column) {
+			case "source":
+				echo get_post_meta($post->ID, 'Quelle', true );
+			break;
+		}
+	}
+	add_action('manage_post_posts_custom_column', 'phoenix_post_custom_columns');
 ?>

@@ -59,10 +59,12 @@ a.pdf-download {
 	border-radius: 2px;
 	box-sizing: border-box;
 	width: 100%;
+	transition: box-shadow .3s ease;
 }
 a.pdf-download:hover {
 	border-color: #bbb;
 	text-decoration: none;
+	box-shadow: 2px 3px 3px #bbb;
 }
 a.pdf-download::before {
 	content: "";
@@ -126,8 +128,8 @@ table.colored thead tr th {
 	color: #fff;
 	background: #400;
 }
-table.colored thead tr:first-child th:first-child {border-top-left-radius: .5rem;}
-table.colored thead tr:first-child th:last-child {border-top-right-radius: .5rem;}
+table.colored thead tr:first-child th:first-child {border-top-left-radius: 2px;}
+table.colored thead tr:first-child th:last-child {border-top-right-radius: 2px;}
 table.colored tbody tr {
 	border-top: 1px solid #ccc;
 	transition: background 0.2s;
@@ -285,6 +287,9 @@ main h1 {
 	margin: 1rem 0;
 	font-size: 1.6rem;
 }
+main h1, main h2, main h3, main h4, main h5, main h6 {
+	font-weight: normal;
+}
 .home main h1 {margin: 0;}
 main nav.breadcrumbs ol {
   padding: 0;
@@ -397,16 +402,21 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 }
 .comment-metadata {font-size: .8rem;}
 .wrapper .content-container a.button {
+	display: inline-block;
 	border: none;
-	border-radius: 5px;
-	padding: 5px 10px;
+	border-radius: 2px;
+	padding: .6rem 1.5rem;
 	cursor: pointer;
 	user-select: none;
 	color: #fff;
 	background: #400;
 	width: auto;
+	transition: box-shadow .3s ease;
 }
-.wrapper .content-container a.button:hover {text-decoration: none;}
+.wrapper .content-container a.button:hover {
+	text-decoration: none;
+	box-shadow: 0px 2px 10px 5px #bbb;
+}
 .vorstaende {text-align: center;}
 .vorstaende .wp-caption {
 	display: inline-block;

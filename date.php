@@ -10,6 +10,12 @@ add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
 $currentYear = date('Y');
 $requestedYear = get_the_date( _x( 'Y', 'yearly archives date format', 'phoenix' ) );
 
+/*if($requestedYear == 2017) {
+	header("HTTP/1.1 302 Found");
+	header("Location: http://www.feuerwehr-aurachhöhe.de/news/2016");
+	exit();
+}*/
+
 wp_enqueue_style( 'date', get_template_directory_uri() . '/date.css' );
 
 if(!is_year()) {

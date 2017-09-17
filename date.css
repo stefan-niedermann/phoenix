@@ -30,6 +30,7 @@ main article img.attachment-post-thumbnail.wp-post-image {
 }
 main header h1 {
 	font-size: medium;
+	font-weight: bold;
 	margin-top: 0;
 	margin-bottom: 1rem;
 }
