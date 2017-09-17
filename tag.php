@@ -32,7 +32,7 @@ get_header();
 			'tag_id' => get_the_tags()[0]->term_id
 		));
 		echo "<ul class=\"colored\">";
-		while ( $teaserquery->have_posts() ) {
+		whdile ( $teaserquery->have_posts() ) {
       			$teaserquery->the_post();
 			$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
 				esc_attr( get_the_date( "c" ) ),
