@@ -12,11 +12,9 @@ test_job:
 deploy_job:
   stage: deploy
   script:
-    - echo "Update Apt-Cache"
     - apt-get update
-    - echo "Install lftp"
     - apt-get install lftp
-    - echo "Deploy to production server"
+    - rm -rf .git
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./ $FTP_PRODUCTION_PATH/phoenix-$CI_COMMIT_SHA;rm -r $FTP_PRODUCTION_PATH/phoenix-alt;mv $FTP_PRODUCTION_PATH/phoenix $FTP_PRODUCTION_PATH/phoenix-alt;mv $FTP_PRODUCTION_PATH/phoenix-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH/phoenix;quit;" $FTP_PRODUCTION_URL
   only:
     - master
