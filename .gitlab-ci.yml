@@ -15,6 +15,7 @@ deploy_job:
     - apt-get update
     - apt-get install lftp
     - rm -rf .git
+    - rm .gitlab-ci.yml
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "mirror -R ./ $FTP_PRODUCTION_PATH/phoenix-$CI_COMMIT_SHA;rm -r $FTP_PRODUCTION_PATH/phoenix-alt;mv $FTP_PRODUCTION_PATH/phoenix $FTP_PRODUCTION_PATH/phoenix-alt;mv $FTP_PRODUCTION_PATH/phoenix-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH/phoenix;quit;" $FTP_PRODUCTION_URL
   only:
     - master
