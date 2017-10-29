@@ -17,6 +17,8 @@ $requestedYear = get_the_date( _x( 'Y', 'yearly archives date format', 'phoenix'
 }*/
 
 wp_enqueue_style( 'date', get_template_directory_uri() . '/date.css' );
+//wp_enqueue_script( 'masonry.pkgd.min', get_template_directory_uri() . '/script/masonry.pkgd.min.js', array(), '0.0.1' );
+//  data-masonry='{ "itemSelector": "post", "fitWidth": true; "columnWidth": "article"; "gutter": "article" }'
 
 if(!is_year()) {
 	global $wp_query;
@@ -130,6 +132,16 @@ get_header();
 				</footer>
 			</article>
 			<?php } ?>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+			     style="display:block; margin-bottom: 1em;border-radius: 2px; box-shadow: 2px 3px 3px rgb(204, 204, 204);"
+			     data-ad-format="fluid"
+			     data-ad-layout-key="-7c+2j-iw+al+16i"
+			     data-ad-client="ca-pub-3162933551127981"
+			     data-ad-slot="2647871655"></ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<footer>
 		<?php

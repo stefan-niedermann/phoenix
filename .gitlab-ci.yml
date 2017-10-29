@@ -20,3 +20,4 @@ deploy_job:
   only:
     - master
   when: manual
+

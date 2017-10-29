@@ -700,7 +700,7 @@ html body #gallery-1 img {
 	}
 	.wrapper > .content-container {
 		background-color: #999;
-		background-image: url("http://www.feuerwehr-aurachhöhe.de/wp-content/themes/phoenix/img/brushed-metal.jpg");
+		background-image: url("/wp-content/themes/phoenix/img/brushed-metal.jpg");
 	}
 	.wrapper main {
 		width: 1024px;
