@@ -78,7 +78,7 @@ a.pdf-download::before {
 	vertical-align: middle;
 	margin-right: 1rem;
 }
-img, textarea {
+img, textarea, video, .wp-video {
 	max-width: 100%;
 	height: auto;
 }
