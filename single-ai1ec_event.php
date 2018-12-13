@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News-Beitrag
+ * Template Name: Event-Beitrag
  * Zeigt einen einzelnen Beitrag auf der News-Seite an.
  */
 
@@ -10,8 +10,8 @@ wp_enqueue_style('single', get_template_directory_uri().'/single.css' );
 wp_enqueue_script( 'single', get_template_directory_uri() . '/single.js', array(), '0.0.1' );
 
 /* Set News to current Menu Item */
-add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
-wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/sidebar.css' );
+//add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
+//wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/sidebar.css' );
 
 get_header();
 
@@ -21,7 +21,7 @@ $creationYear = $creationDateObject->format('Y');
 
 ?>
 <main>
-<nav class="breadcrumbs">
+<!--nav class="breadcrumbs">
 	<ol>
 		<li>
 			<a href="/news">
@@ -39,10 +39,10 @@ $creationYear = $creationDateObject->format('Y');
 			</a>
 		</li>
 	</ol>
-</nav>
-<nav class="post-nav">
-	<a href="/news/<?php echo $creationYear; ?>" class="button">Alle Artikel aus <?php echo $creationYear; ?></a>
-</nav>
+</nav-->
+<!--nav class="post-nav">
+	<a href="/news/<?php echo $creationYear; ?>" class="button">Alle Veranstaltungen aus <?php echo $creationYear; ?></a>
+</nav-->
 <?php
 while ( have_posts() ) : the_post(); ?>
 	<article>
@@ -56,11 +56,7 @@ while ( have_posts() ) : the_post(); ?>
 		<?php endif; ?>
 		<div><?php the_content(); ?></div>
 	</article>
-<?php endwhile;
-echo "<div class=\"sidebar\">";
-dynamic_sidebar("post-sidebar");
-echo "</div>";
-?>
+<?php endwhile; ?>
 </main>
 <?php
 get_footer(); ?>

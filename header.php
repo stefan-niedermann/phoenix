@@ -3,13 +3,29 @@
  * Template Name: Header
  */
 ?><!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head itemscope="itemscope" itemtype="http://schema.org/WebSite">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
+<head>
 	<title><?php wp_title( "|", true, "right" ); ?></title>
-	<meta itemprop="name" content="<?php echo get_bloginfo( 'name' );  ?>" />
+	<meta content="<?php echo get_bloginfo( 'name' );  ?>" />
 	<meta charset="<?php bloginfo( "charset" ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="theme-color" content="#440000" />
+    <meta property="og:site_name" content="<?php echo get_bloginfo( 'name' );  ?>" />
+    <meta property="og:title" content="<?php echo wp_title( "|", true, "right" );  ?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo get_site_url(); ?>" />
+    <?php
+        $og_image_url = get_the_post_thumbnail_url();
+        if(empty($og_image_url)) {
+            $og_image_url = 'https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2016/08/apple-touch-icon-180x180.png';
+        }
+    ?>
+    <meta property="og:image" content="<?php echo $og_image_url ?>" />
+    <?php    
+        $og_excerpt = get_the_excerpt();
+        if(!empty($og_excerpt) && (strpos($og_excerpt, "<") === false)) { ?>
+    <meta property="og:description" content="<?php echo $og_excerpt ?>" />
+    <?php } ?>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png"  type="image/png" />
 	<link rel="pingback" href="<?php bloginfo( "pingback_url" ); ?>" />
 	<?php
