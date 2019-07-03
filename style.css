@@ -4,7 +4,7 @@
  * Author: Niedermann IT-Dienstleistungen
  * Author URI: http://www.niedermann.it/
  * Description: Mobile First Phoenix Theme for Freiwillige Feuerwehr Barthelmesaurach e. V.. This Theme depends on catlist-Plug-In for Wordpress.
- * Version: 0.2.18
+ * Version: 0.2.19
  * License: Closed Source
  * License URI: 
  */
@@ -308,9 +308,9 @@ main nav.breadcrumbs ol li:last-child::after {
   content: "";
 }
 main article .entry-content ol:first-child, main .breadcrumbs {
-	background-color: #eee;
+	/* background-color: #eee; */
 	margin: -1rem -1rem 1rem -1rem;
-	border-bottom: 1px solid #aaa;
+	/* border-bottom: 1px solid #aaa; */
 	padding: 1rem .5rem;
 }
 main article .entry-content ol:first-child li, main .breadcrumbs li {
@@ -547,7 +547,7 @@ html body #gallery-1 img {
 		margin: 0;
 		border-top: 1px solid #ccc;
 		padding: .5rem;
-		transition: background 0.2s;
+		transition: background-color 0.2s;
 		background-color: #eee;
 		width: 50%;
 		display: inline-block;
@@ -701,8 +701,8 @@ html body #gallery-1 img {
 		border-bottom: 2px solid #fff;
 	}
 	body {
-		background-color: #999;
-		background-image: url("/wp-content/themes/phoenix/img/brushed-metal.jpg");
+		background-color: #fff;
+		/* background-image: url("/wp-content/themes/phoenix/img/brushed-metal.jpg"); */
 	}
 	body main {
 		width: 1024px;
