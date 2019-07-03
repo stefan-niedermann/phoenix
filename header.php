@@ -37,7 +37,6 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="wrapper" id="top">
 	<header>
 		<div class="header-inner">
 			<img class="logo" alt="Retten, Löschen, Schützen, Bergen" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" />
@@ -64,4 +63,3 @@
 		?>
 -->
 	</nav>
-	<div class="content-container">

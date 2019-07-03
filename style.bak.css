@@ -20,6 +20,7 @@
 
 body {
 	margin: 0;
+	background: #424f5a;
 	font-size: 1rem;
 	font-family: "Liberation Sans", sans-serif;
 }
@@ -201,9 +202,6 @@ body > nav > button {
 	padding: 0;
 	background-color: transparent;
 }
-body > nav a {
-	color: #fff;
-}
 body > header .searchform > button,
 body > nav > button {
 	background-color: #300;
@@ -221,11 +219,7 @@ body > header .searchform > button {
 body > header .searchform fieldset {
 	margin: 0;
 	padding: 0;
-	box-shadow: 2px 2px 2px #ccc;
-	position: fixed;
-	top: 56px;
-	z-index: 1;
-	width: 100%;
+	box-shadow: 0 2px 4px #000;
 }
 body > header .searchform input {
 	width: 100%;
@@ -258,9 +252,7 @@ body > nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
 	flex-direction: column;
 }
 body > nav ul li a {
@@ -275,18 +267,18 @@ body > nav ul li.current_page_item a {
 	background-color: #343f48;
 	background: linear-gradient(to right, rgb(52, 63, 72) 0, rgb(52, 63, 72) 70%, transparent 100%) repeat scroll 0 0 transparent;
 }
-body main {
+body .content-container {
 	background-color: #fff;
 	color: #333;
 	padding: 1rem;
 	margin-top: 56px;
 }
-body main::after {
+body .content-container::after {
 	content: "";
 	clear: both;
 	display:  block;
 }
-body a {
+.content-container a {
 	color: #238;
 }
 main h1 {
@@ -330,7 +322,6 @@ main img.alignleft {margin: 1rem 1rem 1rem 0;}
 body > footer {
 	background: #400;
 	color: #fff;
-	clear: both;
 }
 body > footer::after {
 	content: "";
@@ -342,9 +333,7 @@ body > footer ul {
 	padding: 0;
 	list-style: none;
 	text-align: center;
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
 	flex-direction: column;
 }
 body > footer ul li a {
@@ -413,7 +402,7 @@ body > footer ul li a {
 	width: auto;
 }
 .comment-metadata {font-size: .8rem;}
-body main a.button {
+body .content-container a.button {
 	display: inline-block;
 	border: none;
 	border-radius: 2px;
@@ -425,7 +414,7 @@ body main a.button {
 	width: auto;
 	transition: box-shadow .3s ease;
 }
-body main a.button:hover {
+body .content-container a.button:hover {
 	text-decoration: none;
 	box-shadow: 0px 2px 10px 5px #bbb;
 }
@@ -460,7 +449,7 @@ body > header h1 {
 	padding: 0 66px;
 	padding: 0 calc(56px + 1rem);
 }
-body main {position: relative;}
+body .content-container {position: relative;}
 li.clickable {cursor: pointer;}
 
 /* Gallery Patch */
@@ -501,9 +490,7 @@ html body #gallery-1 img {
 	main article img {width: auto;}
 	body > footer {padding: 2rem 0;}
 	body > footer ul {
-		-ms-flex-direction: row;
 		flex-direction: row;
-		-ms-flex-pack: justify;
 		justify-content: space-around;
 	}
 	#commentform input,
@@ -520,7 +507,7 @@ html body #gallery-1 img {
 	body > nav > button {display: none;}
 	body > header > form,
 	body > footer,
-	body > main {
+	body > .content-container {
 		box-sizing: border-box;
 		width: 85%;
 		float: right;
@@ -636,7 +623,6 @@ html body #gallery-1 img {
 		display: block;
 		box-shadow: none;
 		margin-top: 1.5rem;
-		position: static;
 	}
 	body > header .searchform fieldset input {
 		width: 15rem;
@@ -675,11 +661,9 @@ html body #gallery-1 img {
 		width: 100%;
 	}
 	body > nav ul {
-		-ms-flex-direction: row;
 		flex-direction: row;
 		width: 1024px;
 		margin: auto;
-		-ms-flex-pack: justify;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -700,7 +684,7 @@ html body #gallery-1 img {
 		font-weight: bold;
 		border-bottom: 2px solid #fff;
 	}
-	body {
+	body > .content-container {
 		background-color: #999;
 		background-image: url("/wp-content/themes/phoenix/img/brushed-metal.jpg");
 	}
@@ -719,18 +703,18 @@ html body #gallery-1 img {
 	}
 	body > header > form,
 	body > footer,
-	body > main {
+	body > .content-container {
 		box-sizing: border-box;
+		width: 100%;
 		float: none;
-		margin-top: 1rem;
+		margin-top: 0;
 	}
 	body > footer {
 		background: #300;
-		width: 100%;
+		width: 1024px;
 		margin: auto;
-		margin-top: 1rem;
 	}
-	body > footer > div {
+	body > footer > .menu-fussmenue-container {
 		width: 1024px;
 		margin: auto;
 	}
@@ -766,4 +750,5 @@ body > header .searchform fieldset button {
   opacity: .7;
 }
 **********************************************/
+
 

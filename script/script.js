@@ -1,8 +1,6 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function() {
-	document.body.classList.add("js");
-	
 	var ID_SEARCHFORM = "searchform";
 	var ID_SITE_NAVIGATION = "site-navigation";
 	var CLASS_MENU_HAUPTMENUE_CONTAINER = "menu-hauptmenue-container";
@@ -95,4 +93,5 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 }, false);
+
 

@@ -17,8 +17,6 @@ $requestedYear = get_the_date( _x( 'Y', 'yearly archives date format', 'phoenix'
 }*/
 
 wp_enqueue_style( 'date', get_template_directory_uri() . '/date.css' );
-// wp_enqueue_script( 'masonry.pkgd.min', get_template_directory_uri() . '/script/masonry.pkgd.min.js', array(), '0.0.1' );
-//  data-masonry='{ "itemSelector": "post", "fitWidth": true; "columnWidth": "article"; "gutter": "article" }'
 
 if(!is_year()) {
 	global $wp_query;
@@ -80,13 +78,19 @@ get_header();
 			);
 		?>
 		<div class="articles">
-			<?php while ( have_posts() ) { the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<?php while ( have_posts() ) { the_post();
+				$postClasses = array();
+				if(!has_post_thumbnail()) {
+					array_push($postClasses, 'no-featured-image');
+				} ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class($postClasses); ?>>
 				<header>
 					<h1>
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h1>
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large"); ?></a>
+					<?php if(has_post_thumbnail()) { ?>
+						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large"); ?></a>
+					<?php } ?>
 				</header>
 				<div>
 					<?php the_excerpt(); ?>
@@ -159,3 +163,4 @@ get_header();
 	</section>
 </main>
 <?php get_footer(); ?>
+
