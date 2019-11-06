@@ -28,7 +28,7 @@ main article {
 	background: #fff;
 }
 main section .articles article.no-featured-image {
-	flex: 1 0 15%;
+	flex: 1 0 50%;
 }
 main article img.attachment-post-thumbnail.wp-post-image {
 	width: 100%;
