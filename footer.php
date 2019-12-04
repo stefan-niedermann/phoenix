@@ -5,7 +5,7 @@
  * Bindet das Footer-Menü ein
  */
 ?>
-<footer class="section black white-text">
+<footer class="section">
 	<?php wp_nav_menu(array(
 		"theme_location" => "footer-menu",
 		"menu_class" => "container"

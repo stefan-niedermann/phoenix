@@ -32,8 +32,8 @@ while (have_posts()) : the_post();
 			</strong>
 		</section>
 	<?php endif; ?>
-	<main class="container flow-text">
-		<ol class="breadcrumbs">
+	<section>
+		<ol class="container breadcrumbs">
 			<li>
 				<a href="/news">
 					<span>News</span>
@@ -50,14 +50,15 @@ while (have_posts()) : the_post();
 				</a>
 			</li>
 		</ol>
-		<a href="/news/<?php echo $creationYear; ?>" class="btn waves-effect"><i class="material-icons left">arrow_back_ios keyboard_arrow_left</i>Alle Artikel aus <?php echo $creationYear; ?></a>
-		<article>
+	</section>
+	<main class="section">
+		<article class="container flow-text">
 			<div><?php the_content(); ?></div>
 		</article>
-		<div class="sidebar">
-			<?php dynamic_sidebar("post-sidebar"); ?>
-		</div>
 	</main>
+	<section class="sidebar">
+		<?php dynamic_sidebar("post-sidebar"); ?>
+	</section>
 <?php
 endwhile;
 get_footer(); ?>

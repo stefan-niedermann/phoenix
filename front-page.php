@@ -18,22 +18,48 @@ get_header(); ?>
 	</div>
 </header>
 <section class="section">
-	<div class="container">
+	<div class="container sidebar">
 		<div class="row">
 			<?php dynamic_sidebar("main-sidebar"); ?>
-			<div class="row s12 m4">
-				<strong>Termine</strong>
+			<div class="col s12 m4">
+				<h2>Termine</h2>
+				<div class="textwidget">
+					<ul>
+						<li>6. Januar, 14:00 Uhr<br>
+							<strong>JHV</strong> Barthelmesaurach im Gasthaus Gundel</li>
+						<li>15. Februar, 21:00 Uhr<br>
+							<strong>JHV</strong> Günzersreuth im Gasthaus Ziegler</li>
+						<li>9. Mai, 19:00 Uhr<br>
+							<strong>Grillfest</strong> am Feuerwehrhaus</li>
+						<li>28. November, 19:00 Uhr<br>
+							<strong>Weihnachtsfeier</strong></li>
+					</ul>
+				</div>
 			</div>
-			<div class="row s12 m4">
-				<strong>Übungspläne</strong>
+			<div class="col s12 m4">
+				<h2>Übungspläne</h2>
+				<div class="textwidget">
+					<ul class="uebungsplaene">
+						<li><a href="/wp-content/uploads/2019/03/Übungsplan-2019.pdf">Aktive ( &gt; 18)</a></li>
+						<li><a href="https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2019/01/Übungsplan-2019.pdf">Jugend (12 – 18)</a></li>
+						<li><a href="https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2019/01/Uebungsplan_Bambini.pdf">Bambini (6 – 12)</a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="row s12 m4">
-				<strong>Dokumente</strong>
+			<div class="col s12 m4">
+				<h2>Dokumente</h2>
+				<div class="textwidget">
+					<ul>
+						<li><a href="/wp-content/uploads/2015/11/Aufnahmeantrag-mit-Einzugsermächtigung.pdf" title="Aufnahmeantrag herunterladen">Aufnahmeantrag FFW Barthelmesaurach e. V.</a></li>
+						<li><a href="/wp-content/uploads/2017/03/Satzung-der-Freiwilligen-Feuerwehr-Barthelmesaurach-e.-V.-2016.pdf">Satzung FFW Barthelmesaurach e. V.</a></li>
+						<li><a href="/wp-content/uploads/2017/03/FF-Günzersreuth-Aufnahmeantrag-2017.pdf">Aufnahmeantrag FFW Günzersreuth e. V.</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<main class="container flow-text">
+<main class="section container flow-text">
 	<?php if (have_posts()) { ?>
 		<?php while (have_posts()) {
 				the_post(); ?>

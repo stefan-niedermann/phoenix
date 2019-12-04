@@ -46,6 +46,12 @@ body>main h3 {
 	font-size: 1.4rem;
 }
 
+.sidebar h2 {
+	display: block;
+	text-align: center;
+	font-size: medium;
+}
+
 /*
 .post-teaser-container {
 	display: -ms-flexbox;

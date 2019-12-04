@@ -87,3 +87,19 @@ main ol:first-child li {
 main ol:first-child li:last-child {
     margin-right: 0;
 }
+
+body>footer {
+	background-color: #500;
+}
+
+body>footer ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5rem 0;
+}
+
+body>footer a {
+    color: #fff;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+}

@@ -32,8 +32,8 @@
 			"name" => __( "Main Sidebar" ),
 			'before_widget' => '<aside class="col s12 m4">',
 			'after_widget' => '</aside>',
-			'before_title' => '<strong>',
-			'after_title' => '</strong>'
+			'before_title' => '<h2>',
+			'after_title' => '</h2>'
 		));
 		register_sidebar(array(
 			"id" => "post-sidebar",
