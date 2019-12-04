@@ -14,7 +14,7 @@ wp_enqueue_script( 'category', get_template_directory_uri() . '/category.js', ar
 
 get_header();
 ?>
-<main>
+<main class="container flow-text">
 	<nav class="breadcrumbs">
 		<ol>
 			<li>

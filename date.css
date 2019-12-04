@@ -2,6 +2,24 @@
  * Template Name: News-Übersicht
  */
 
+@supports(object-fit: cover) {
+	main article img {
+		height: 400px;
+		object-fit: cover;
+	}
+}
+
+main .row {
+	margin-bottom: 4rem;
+}
+
+main article h1 {
+	font-size: 1.7rem;
+	margin-top: 1rem;
+}
+
+/*
+
 main section .articles article p {
 	text-align: justify;
 }
@@ -107,3 +125,5 @@ main article footer {
     }
 }
 
+
+ */

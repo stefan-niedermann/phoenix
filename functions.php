@@ -30,10 +30,10 @@
 		register_sidebar(array(
 			"id" => "main-sidebar",
 			"name" => __( "Main Sidebar" ),
-			'before_widget' => '<aside>',
+			'before_widget' => '<aside class="col s12 m4">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3>',
-			'after_title' => '</h3>'
+			'before_title' => '<strong>',
+			'after_title' => '</strong>'
 		));
 		register_sidebar(array(
 			"id" => "post-sidebar",
@@ -54,30 +54,11 @@
 		return $classes;
 	}
 
-	function it_niedermann_ffw_title( $title, $sep ) {
-		global $paged, $page;
-
-		if ( is_feed() )
-			return $title;
-
-		$title .= get_bloginfo( 'name' );
-
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'it_niedermann_ffw_title', 10, 2 );
-
-	function it_niedermann_ffw_remove_hentry( $classes ) {
+	function phoenix_ffw_remove_hentry( $classes ) {
 		$classes = array_diff( $classes, array( 'hentry' ) );
 		return $classes;
 	}
-	add_filter( 'post_class','it_niedermann_ffw_remove_hentry' );
+	add_filter( 'post_class','phoenix_ffw_remove_hentry' );
 
 	/* http://wordpress.stackexchange.com/questions/2802/display-a-portion-branch-of-the-menu-tree-using-wp-nav-menu/2809#2809 */
 	add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );

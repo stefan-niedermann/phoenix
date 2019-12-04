@@ -4,13 +4,11 @@
  * Generisches Template für eine Seite, der kein Template zugewiesen ist
  */
 get_header(); ?>
-<main>
+<main class="container flow-text">
 <?php if ( have_posts() ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="entry-content">
-				<?php the_content(); ?>
-			</div>
+			<?php the_content(); ?>
 		</article>
 
 		<?php if (comments_open()) {

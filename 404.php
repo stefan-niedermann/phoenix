@@ -5,7 +5,7 @@
  */
 wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/style/sidebar.css' );
 get_header(); ?>
-<main>
+<main class="container flow-text">
 	<h1>Die gesuchte Seite wurde nicht gefunden</h1>
 	<p>Hoppla, die gesuchte Seite konnten wir leider nicht finden. Entweder ist sie unter einer neuen Adresse verfügbar oder sie hat nie existiert.</p>
 	<p>Möchten Sie stattdessen auf unsere <a href="/" title="Startseite">Startseite</a> gehen?</p>
