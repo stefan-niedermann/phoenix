@@ -15,19 +15,17 @@ wp_enqueue_script( 'category', get_template_directory_uri() . '/category.js', ar
 get_header();
 ?>
 <main class="container flow-text">
-	<nav class="breadcrumbs">
-		<ol>
-			<li>
-				<span><a href="/news">News</a></span>
-			</li>
-			<li>
-				<span>Kategorien</span>
-			</li>
-			<li>
-				<span><?php echo single_cat_title("", false); ?></span>
-			</li>
-		</ol>
-	</nav>
+	<ol class="breadcrumbs">
+		<li>
+			<span><a href="/news">News</a></span>
+		</li>
+		<li>
+			<span>Kategorien</span>
+		</li>
+		<li>
+			<span><?php echo single_cat_title("", false); ?></span>
+		</li>
+	</ol>
 	<section>
 	<?php
 		$teaserquery = new WP_Query(array(
@@ -36,7 +34,7 @@ get_header();
 			'post_status' => 'publish',
 			'cat' => get_the_category()[0]->cat_ID
 		));
-		echo "<ul class=\"colored\">";
+		echo "<ul>";
 		while ( $teaserquery->have_posts() ) {
       			$teaserquery->the_post();
 			$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',

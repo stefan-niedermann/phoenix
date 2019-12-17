@@ -20,20 +20,8 @@ $creationYear = $creationDateObject->format('Y');
 
 while (have_posts()) : the_post();
 	?>
-	<header class="section white-text">
-		<div class="container">
-			<h1><?php echo the_title() ?></h1>
-		</div>
-	</header>
-	<?php if (!empty($currentPost->post_excerpt)) : ?>
-		<section class="container">
-			<strong class="white-text">
-				<?php the_excerpt(); ?>
-			</strong>
-		</section>
-	<?php endif; ?>
-	<section>
-		<ol class="container breadcrumbs">
+	<main class="container flow-text">
+		<ol class="breadcrumbs">
 			<li>
 				<a href="/news">
 					<span>News</span>
@@ -50,9 +38,16 @@ while (have_posts()) : the_post();
 				</a>
 			</li>
 		</ol>
-	</section>
-	<main class="section">
-		<article class="container flow-text">
+		<article>
+			<header>
+				<h1><?php echo the_title(); ?></h1>
+				<p class="grey-text"><?php the_author(); ?> - <?php the_date(); ?></p>
+			</header>
+			<?php if (!empty($currentPost->post_excerpt)) : ?>
+				<strong class="white-text">
+					<?php the_excerpt(); ?>
+				</strong>
+			<?php endif; ?>
 			<div><?php the_content(); ?></div>
 		</article>
 	</main>

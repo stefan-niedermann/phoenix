@@ -17,7 +17,7 @@ get_header(); ?>
 		</div>
 	</div>
 </header>
-<section class="section">
+<section class="section grey lighten-4">
 	<div class="container sidebar">
 		<div class="row">
 			<?php dynamic_sidebar("main-sidebar"); ?>
@@ -74,7 +74,7 @@ get_header(); ?>
 		<?php dynamic_sidebar("main-sidebar"); ?>
 	</div>
 </main>
-<section class="section">
+<section class="section grey lighten-4">
 	<div class="container">
 		<div class="teaser-row">
 			<?php

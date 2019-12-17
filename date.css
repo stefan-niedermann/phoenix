@@ -2,11 +2,17 @@
  * Template Name: News-Übersicht
  */
 
-@supports(object-fit: cover) {
-	main article img {
-		height: 400px;
-		object-fit: cover;
+@media (min-width: 600px) {
+	@supports(object-fit: cover) {
+		main article img {
+			height: 400px;
+			object-fit: cover;
+		}
 	}
+}
+
+main {
+	overflow: hidden;
 }
 
 main .row {
@@ -16,6 +22,19 @@ main .row {
 main article h1 {
 	font-size: 1.7rem;
 	margin-top: 1rem;
+}
+
+.year-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn.prev, .btn.next {
+	background-color: #440000;
+}
+
+.prev {
+	margin-left: auto;
 }
 
 /*

@@ -1,10 +1,7 @@
 /**
  * Template Name: News-Beitrag
  */
- body>header {
-	 background-color: #500;
- }
- body>header h1 {
-	 font-size: 3rem;
-	 margin: 0;
- }
+article header h1 + p {
+	 font-style: italic;
+	 font-size: medium;
+}

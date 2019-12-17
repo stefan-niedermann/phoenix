@@ -46,6 +46,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				<span class="hide-on-large-only"><?php bloginfo("name") ?></span>
 				<?php wp_nav_menu(array(
 					"theme_location" => "header-menu",
 					"menu_class" => "container center hide-on-med-and-down",
@@ -55,9 +56,25 @@
 			</div>
 		</nav>
 	</div>
+	<ul id="slide-out" class="sidenav show-on-small">
+    	<li>
+			<div class="user-view">
+      		<div class="background">
+        		<img src="images/office.jpg">
+      		</div>
+			<img class="circle" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
+			<span class="white-text name"><?php bloginfo("name") ?></span>
+			<span class="white-text email"><?php bloginfo("description") ?></span>
+    </div></li>
 	<?php wp_nav_menu(array(
 		"theme_location" => "header-menu",
-		"menu_class" => "sidenav show-on-small",
-		"menu_id" => "slide-out",
-		"container" => null
+		"container" => null,
+		"items_wrap" => '%3$s'
 	)); ?>
+	
+    <li><div class="divider"></div></li>
+	<?php wp_nav_menu(array(
+		"theme_location" => "footer-menu",
+		"container" => null,
+		"items_wrap" => '%3$s'
+	)); ?></ul>

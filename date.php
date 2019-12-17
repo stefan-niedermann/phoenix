@@ -30,59 +30,54 @@ if (!is_year()) {
 
 get_header();
 ?>
-<main class="section">
-	<ol class="container flow-text breadcrumbs">
-		<li>
-			<a href="/news">
-				News
-			</a>
-		</li>
-		<li>
-			<a href="/news/<?php echo $requestedYear; ?>">
-				<?php echo $requestedYear; ?>
-			</a>
-		</li>
-	</ol>
+<main class="grey lighten-4">
+	<div class="container">
+		<ol class="flow-text breadcrumbs">
+			<li>
+				<a href="/news">
+					News
+				</a>
+			</li>
+			<li>
+				<a href="/news/<?php echo $requestedYear; ?>">
+					<?php echo $requestedYear; ?>
+				</a>
+			</li>
+		</ol>
+	</div>
 	<div class="container">
 		<?php
-		// Print Previous and Next Buttons
+								// Print Previous and Next Buttons
 
-		$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
-		$nextYear = current($years);
-		while ($nextYear > $requestedYear) {
-			$nextYear = next($years);
-		}
-		$nextYear = prev($years);
-		$prevYear = end($years);
-		while ($prevYear < $requestedYear) {
-			$prevYear = prev($years);
-		}
-		$prevYear = next($years);
-		if ($requestedYear < $currentYear) {
-			echo '<a href="/news/' . $nextYear . '" class="next waves-effect waves-light btn">' . $nextYear . '</a>';
-		}
-		if ($requestedYear > end($years)) {
-			echo '<a href="/news/' . $prevYear . '" class="prev waves-effect waves-light btn">' . $prevYear . '</a>';
-		}
-		if (have_posts()) {
-			global $wp_query;
-			query_posts(
-				array_merge(
-					$wp_query->query,
-					array('posts_per_page' => -1)
-				)
-			);
-			?>
+								$years = $wpdb->get_col("SELECT DISTINCT YEAR(post_date) FROM $wpdb->posts ORDER BY post_date DESC");
+								$nextYear = current($years);
+								while ($nextYear > $requestedYear) {
+									$nextYear = next($years);
+								}
+								$nextYear = prev($years);
+								$prevYear = end($years);
+								while ($prevYear < $requestedYear) {
+									$prevYear = prev($years);
+								}
+								$prevYear = next($years);
+								if (have_posts()) {
+									global $wp_query;
+									query_posts(
+										array_merge(
+											$wp_query->query,
+											array('posts_per_page' => -1)
+										)
+									);
+		?>
 			<div class="teaser-row">
 				<?php
-					$even = false;
-					while (have_posts()) {
-						the_post();
-						$postClasses = array('teaser');
-						array_push($postClasses, 'col l6');
-						if (!has_post_thumbnail()) {
-							array_push($postClasses, 'no-featured-image');
-						} ?>
+									$even = false;
+									while (have_posts()) {
+										the_post();
+										$postClasses = array('teaser');
+										if (!has_post_thumbnail()) {
+											array_push($postClasses, 'no-featured-image');
+										} ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class($postClasses); ?>>
 						<header>
 							<h1>
@@ -97,63 +92,63 @@ get_header();
 						</div>
 						<footer>
 							<?php
-									// Translators: used between list items, there is a space after the comma.
-									$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
+																					// Translators: used between list items, there is a space after the comma.
+																					$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
 
-									// Translators: used between list items, there is a space after the comma.
-									$tag_list = get_the_tag_list('', __(', ', 'twentytwelve'));
+																					// Translators: used between list items, there is a space after the comma.
+																					$tag_list = get_the_tag_list('', __(', ', 'twentytwelve'));
 
-									$date = sprintf(
-										'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-										esc_url(get_permalink()),
-										esc_attr(get_the_time()),
-										esc_attr(get_the_date('c')),
-										esc_html(get_the_date())
-									);
+																					$date = sprintf(
+																						'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+																						esc_url(get_permalink()),
+																						esc_attr(get_the_time()),
+																						esc_attr(get_the_date('c')),
+																						esc_html(get_the_date())
+																					);
 
-									$author = sprintf(
-										'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-										esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-										esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
-										get_the_author()
-									);
+																					$author = sprintf(
+																						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+																						esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+																						esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
+																						get_the_author()
+																					);
 
-									// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
-									if ($tag_list) {
-										$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht. Schlagworte: %2$s', 'twentytwelve');
-									} elseif ($categories_list) {
-										$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
-									} else {
-										$utility_text = __('Dieser Beitrag wurde in %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
-									}
+																					// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
+																					if ($tag_list) {
+																						$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht. Schlagworte: %2$s', 'twentytwelve');
+																					} elseif ($categories_list) {
+																						$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
+																					} else {
+																						$utility_text = __('Dieser Beitrag wurde in %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
+																					}
 
-									printf(
-										$utility_text,
-										$categories_list,
-										$tag_list,
-										$date,
-										$author
-									);
-									?>
+																					printf(
+																						$utility_text,
+																						$categories_list,
+																						$tag_list,
+																						$date,
+																						$author
+																					);
+							?>
 						</footer>
 					</article>
 				<?php
-					}
-					?>
+																				}
+				?>
 			</div>
-			<footer>
+			<p class="year-nav">
 			<?php
-				// Print Previous and Next Buttons again
+																				// Print Previous and Next Buttons again
 
-				if ($requestedYear < $currentYear) {
-					echo '<a href="/news/' . $nextYear . '" class="next button">' . $nextYear . '</a>';
-				}
-				if ($requestedYear > end($years)) {
-					echo '<a href="/news/' . $prevYear . '" class="prev button">' . $prevYear . '</a>';
-				}
-			}
+																				if ($requestedYear < $currentYear) {
+																					echo '<a href="/news/' . $nextYear . '" class="next waves-effect waves-light btn btn-large"><i class="material-icons left">keyboard_arrow_left</i>' . $nextYear . '</a>';
+																				}
+																				if ($requestedYear > end($years)) {
+																					echo '<a href="/news/' . $prevYear . '" class="prev waves-effect waves-light btn btn-large"><i class="material-icons right">keyboard_arrow_right</i>' . $prevYear . '</a>';
+																				}
+																			}
 			?>
-			</footer>
+			</p>
 	</div>
 </main>
 <?php get_footer(); ?>
