@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
 
 <head>
-	<title><?php wp_title("|", true, "right"); ?></title>
+	<title><?php if(!is_front_page()) { wp_title(); echo ' - '; } ?> <?php bloginfo('name') ?></title>
 	<meta content="<?php bloginfo('name');  ?>" />
 	<meta charset="<?php bloginfo("charset"); ?>" />
 	<meta name="viewport" content="width=device-width" />

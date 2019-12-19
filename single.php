@@ -41,7 +41,20 @@ while (have_posts()) : the_post();
 		<article>
 			<header>
 				<h1><?php echo the_title(); ?></h1>
-				<p class="grey-text"><?php the_author(); ?> - <?php the_date(); ?></p>
+				<p class="grey-text">
+					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="Erstellt am <?php echo get_the_date("l, j. F Y, H:m") ?> Uhr" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
+					<?php
+						$creationDateObject = new DateTime($currentPost->post_date);
+						$modifiedDateObject = new DateTime($currentPost->post_modified);
+						if($modifiedDateObject > $creationDateObject) {
+							?>
+								<time class="tooltipped" data-tooltip="Zuletzt bearbeitet am <?php the_modified_date("l, j. F Y, H:m") ?> Uhr" datetime="<?php the_modified_date("j. M. Y H:i") ?>">
+									<i class="material-icons">edit</i>
+								</time>
+							<?php
+						}
+					?>
+				</p>
 			</header>
 			<?php if (!empty($currentPost->post_excerpt)) : ?>
 				<strong class="white-text">

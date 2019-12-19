@@ -30,10 +30,10 @@
 		register_sidebar(array(
 			"id" => "main-sidebar",
 			"name" => __( "Main Sidebar" ),
-			'before_widget' => '<aside class="col s12 m4">',
-			'after_widget' => '</aside>',
-			'before_title' => '<h2>',
-			'after_title' => '</h2>'
+			'before_widget' => '<li>',
+			'after_widget' => '</div></li>',
+			'before_title' => '<div class="collapsible-header">',
+			'after_title' => '</div><div class="collapsible-body white">'
 		));
 		register_sidebar(array(
 			"id" => "post-sidebar",

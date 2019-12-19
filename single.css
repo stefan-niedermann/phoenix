@@ -1,7 +1,24 @@
 /**
  * Template Name: News-Beitrag
  */
-article header h1 + p {
+main article header h1 + p {
 	 font-style: italic;
 	 font-size: medium;
+}
+
+main article header h1 + p {
+    display: flex;
+    align-items: center;
+}
+
+main article header h1 + p time {
+	cursor: help;
+}
+
+main article header h1 + p time:first-of-type {
+	margin-left: .3rem;
+}
+
+main article header h1 + p time:last-of-type {
+	margin-left: .5rem;
 }
