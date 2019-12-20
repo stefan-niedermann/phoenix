@@ -8,7 +8,7 @@ main article header h1 + p {
 
 main article header h1 + p {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 main article header h1 + p time {
@@ -21,4 +21,8 @@ main article header h1 + p time:first-of-type {
 
 main article header h1 + p time:last-of-type {
 	margin-left: .5rem;
+}
+
+main article header h1 + p i.material-icons {
+	font-size: 1.4rem;
 }

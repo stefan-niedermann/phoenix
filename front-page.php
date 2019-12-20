@@ -24,41 +24,6 @@ get_header();
 	<div class="container sidebar">
 		<ul class="collapsible">
 			<?php dynamic_sidebar("main-sidebar"); ?>
-			<li>
-				<div class="collapsible-header">Termine</div>
-				<div class="collapsible-body textwidget white">
-					<ul>
-						<li>6. Januar, 14:00 Uhr<br>
-							<strong>JHV</strong> Barthelmesaurach im Gasthaus Gundel</li>
-						<li>15. Februar, 21:00 Uhr<br>
-							<strong>JHV</strong> Günzersreuth im Gasthaus Ziegler</li>
-						<li>9. Mai, 19:00 Uhr<br>
-							<strong>Grillfest</strong> am Feuerwehrhaus</li>
-						<li>28. November, 19:00 Uhr<br>
-							<strong>Weihnachtsfeier</strong></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">Übungspläne</div>
-				<div class="collapsible-body textwidget white">
-					<ul class="uebungsplaene">
-						<li><a href="/wp-content/uploads/2019/03/Übungsplan-2019.pdf">Aktive ( &gt; 18)</a></li>
-						<li><a href="https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2019/01/Übungsplan-2019.pdf">Jugend (12 – 18)</a></li>
-						<li><a href="https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2019/01/Uebungsplan_Bambini.pdf">Bambini (6 – 12)</a></li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<div class="collapsible-header">Dokumente</div>
-				<div class="collapsible-body textwidget white">
-					<ul>
-						<li><a href="/wp-content/uploads/2015/11/Aufnahmeantrag-mit-Einzugsermächtigung.pdf" title="Aufnahmeantrag herunterladen">Aufnahmeantrag FFW Barthelmesaurach e. V.</a></li>
-						<li><a href="/wp-content/uploads/2017/03/Satzung-der-Freiwilligen-Feuerwehr-Barthelmesaurach-e.-V.-2016.pdf">Satzung FFW Barthelmesaurach e. V.</a></li>
-						<li><a href="/wp-content/uploads/2017/03/FF-Günzersreuth-Aufnahmeantrag-2017.pdf">Aufnahmeantrag FFW Günzersreuth e. V.</a></li>
-					</ul>
-				</div>
-			</li>
 		</ul>
 	</div>
 </section>
@@ -73,9 +38,6 @@ get_header();
 			</article>
 	<?php }
 																} ?>
-	<div class="sidebar">
-		<?php dynamic_sidebar("main-sidebar"); ?>
-	</div>
 </main>
 <section class="section grey lighten-4">
 	<div class="container">

@@ -64,9 +64,6 @@ while (have_posts()) : the_post();
 			<div><?php the_content(); ?></div>
 		</article>
 	</main>
-	<section class="sidebar">
-		<?php dynamic_sidebar("post-sidebar"); ?>
-	</section>
 <?php
 endwhile;
 get_footer(); ?>

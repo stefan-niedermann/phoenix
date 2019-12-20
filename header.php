@@ -8,13 +8,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
 
 <head>
-	<title><?php if(!is_front_page()) { wp_title(); echo ' - '; } ?> <?php bloginfo('name') ?></title>
+	<title><?php if(!is_front_page()) { wp_title("-", true, "right"); } ?> <?php bloginfo('name') ?></title>
 	<meta content="<?php bloginfo('name');  ?>" />
 	<meta charset="<?php bloginfo("charset"); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="theme-color" content="#440000" />
 	<meta property="og:site_name" content="<?php bloginfo('name');  ?>" />
-	<meta property="og:title" content="<?php echo wp_title("|", true, "right");  ?>" />
+	<meta property="og:title" content="<?php echo wp_title("-", true, "right");  ?>" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="<?php echo get_site_url(); ?>" />
 	<?php
@@ -46,7 +46,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-				<span class="hide-on-large-only"><?php bloginfo("name") ?></span>
+				<a class="hide-on-large-only" href="/"><?php bloginfo("name") ?></a>
 				<?php wp_nav_menu(array(
 					"theme_location" => "header-menu",
 					"menu_class" => "container center hide-on-med-and-down",
@@ -59,22 +59,20 @@
 	<ul id="slide-out" class="sidenav show-on-small">
     	<li>
 			<div class="user-view">
-      		<div class="background">
-        		<img src="images/office.jpg">
-      		</div>
-			<img class="circle" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
-			<span class="white-text name"><?php bloginfo("name") ?></span>
-			<span class="white-text email"><?php bloginfo("description") ?></span>
-    </div></li>
-	<?php wp_nav_menu(array(
-		"theme_location" => "header-menu",
-		"container" => null,
-		"items_wrap" => '%3$s'
-	)); ?>
-	
-    <li><div class="divider"></div></li>
-	<?php wp_nav_menu(array(
-		"theme_location" => "footer-menu",
-		"container" => null,
-		"items_wrap" => '%3$s'
-	)); ?></ul>
+				<img class="circle" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg">
+				<span class="white-text name"><?php bloginfo("name") ?></span>
+				<span class="white-text email"><?php bloginfo("description") ?></span>
+    		</div>
+		</li>
+		<?php wp_nav_menu(array(
+			"theme_location" => "header-menu",
+			"container" => null,
+			"items_wrap" => '%3$s'
+		)); ?>
+		<li><div class="divider"></div></li>
+		<?php wp_nav_menu(array(
+			"theme_location" => "footer-menu",
+			"container" => null,
+			"items_wrap" => '%3$s'
+		)); ?>
+	</ul>
