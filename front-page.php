@@ -20,7 +20,7 @@ get_header();
 		</div>
 	</div>
 </header>
-<section class="section">
+<section class="section grey lighten-4">
 	<div class="container sidebar">
 		<ul class="collapsible">
 			<?php dynamic_sidebar("main-sidebar"); ?>

@@ -48,6 +48,10 @@ body {
     font-family: "Liberation Sans", sans-serif;
 }
 
+strong {
+    font-weight: 600;
+}
+
 h1, h2, h3, h4, h5, h6 {
     hyphens: auto;
     word-wrap: break-word;
@@ -78,6 +82,10 @@ main img.alignright {
 
 main img.alignleft {
     margin: 1rem 1rem 1rem 0;
+}
+
+.navbar-fixed {
+    z-index: 1;
 }
 
 .navbar-fixed nav, .sidenav li:first-child {
@@ -137,11 +145,8 @@ body>footer {
 }
 
 @media (max-width: 992px) {
-    body>footer>* {
-        display: none;
-    }
     body>footer {
-        height: 1rem;
+        display: none;
     }
 }
 
@@ -172,7 +177,7 @@ body>footer a {
 }
 
 .btn, .btn-large, .btn-small {
-    background-color: #300;
+    background-color: #500;
     display: inline-block;
     margin: .5rem;
 }
