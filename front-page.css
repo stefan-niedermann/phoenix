@@ -62,17 +62,3 @@ body>main h3 {
 	text-align: center;
 	font-size: x-large;
 }
-
-.collapsible-body .textwidget ul {
-	padding-left: 1rem;
-}
-
-.collapsible-body .textwidget li {
-	list-style: disc;
-	margin-bottom: 1rem;
-	padding-left: .5rem;
-}
-
-.collapsible-body .textwidget li:last-child {
-	margin-bottom: 0;
-}
