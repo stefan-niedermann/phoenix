@@ -48,6 +48,10 @@ body {
     font-family: "Liberation Sans", sans-serif;
 }
 
+p {
+    hyphens: auto;
+}
+
 strong {
     font-weight: 600;
 }
