@@ -14,17 +14,9 @@ deploy_job:
   dependencies:
     - test_job
   script:
-    - echo "--- Install dependencies ---"
     - apt-get update
     - apt-get --yes --force-yes install imagemagick lftp
-    - echo "--- Remove internal artifacts ---"
     - rm -rf .git
     - rm .gitlab-ci.yml
-    - echo "--- Uploading project via FTP ---"
-    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "set ssl:verify-certificate no; mirror -R ./ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; quit;" $FTP_PRODUCTION_URL
-    - echo "--- Remove old backups ---"
-    - rm -rf $FTP_PRODUCTION_PATH-alt
-    - echo "--- Switch target ---"
-    - mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH-alt
-    - mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH
+    - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "set ssl:verify-certificate no; mirror -R ./ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH; quit;" $FTP_PRODUCTION_URL
 
