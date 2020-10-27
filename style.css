@@ -93,7 +93,7 @@ main img.alignleft {
 }
 
 .navbar-fixed {
-    z-index: 1;
+    z-index: 2;
 }
 
 .navbar-fixed nav, .sidenav li:first-child {
