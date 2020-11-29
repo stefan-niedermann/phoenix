@@ -182,9 +182,10 @@ body>footer a {
     }
     .colored>li::before {
         content: "»";
-        position: relative;
+        position: absolute;
         color: #ccc;
         left: -1.5rem;
+        bottom: .17rem;
     }
 }
 
