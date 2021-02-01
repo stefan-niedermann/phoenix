@@ -141,6 +141,10 @@ main .is-style-circle-mask img {
     display: block;
 }
 
+figure {
+    text-align: center;
+}
+
 figcaption {
     color: #666;
     font-style: italic;
