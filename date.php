@@ -87,9 +87,7 @@ get_header();
 								<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large"); ?></a>
 							<?php } ?>
 						</header>
-						<div class="flow-text">
-							<?php the_excerpt(); ?>
-						</div>
+						<?php the_excerpt(); ?>
 						<footer>
 							<?php
 																					// Translators: used between list items, there is a space after the comma.
