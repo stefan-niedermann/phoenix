@@ -57,7 +57,7 @@ while (have_posts()) : the_post();
 				</p>
 			</header>
 			<?php if (!empty($currentPost->post_excerpt)) : ?>
-				<strong class="white-text">
+				<strong>
 					<?php the_excerpt(); ?>
 				</strong>
 			<?php endif; ?>
