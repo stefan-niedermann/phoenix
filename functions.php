@@ -114,7 +114,7 @@
 		if ($the_tags && count($the_tags) > 0) {
 			echo '<ul class="tags">';
 			foreach ($the_tags as $tag) {
-				echo '<li><a href="' . esc_attr(get_tag_link($tag->term_id)) . '">' . $tag->name . '</a></li>';
+				echo '<li><a href="' . esc_attr(get_tag_link($tag->term_id)) . '" class="waves-effect">' . $tag->name . '</a></li>';
 			}
 			echo '</ul>';
 		}
@@ -127,7 +127,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(array_merge(array('card'), $classes)); ?>>
 			<header class="card-content">
 				<h1>
-					<a href="<?php the_permalink(); ?>" rel="bookmark" class="waves-effect"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h1>
 			</header>
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large", ['class' => 'card-image']); ?></a>

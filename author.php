@@ -18,22 +18,17 @@ get_header();
 	<h2>Letzte Artikel</h2>
 	<?php
 	$teaserquery = new WP_Query(array(
-		'posts_per_page' => 20,
+		'posts_per_page' => 6,
 		'post_type' => 'post',
 		'post_status' => 'publish',
 		'author' => get_the_author_meta("id")
 	));
-	echo "<ul class=\"colored\">";
+	echo '<div class="teaser-row">';
 	while ($teaserquery->have_posts()) {
 		$teaserquery->the_post();
-		$date = sprintf(
-			'<time class="entry-date" datetime="%1$s">%2$s</time>',
-			esc_attr(get_the_date("c")),
-			esc_html(get_the_date("d.m.Y"))
-		);
-		echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a><span class="catlist-date">' . $date . '</span></li>';
+		the_teaser_entry(array('col', 'l6'));
 	}
-	echo "</ul>";
+	echo "</div>";
 	?>
 </main>
 <?php get_footer(); ?>
