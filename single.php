@@ -64,7 +64,6 @@ while (have_posts()) : the_post();
 				</strong>
 			<?php endif; ?>
 			<div><?php the_content(); ?></div>
-			<?php the_tags(); ?>
 		</article>
 	</main>
 <?php
