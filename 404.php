@@ -22,7 +22,8 @@ get_header(); ?>
 		));
 		while ($teaserquery->have_posts()) {
 			$teaserquery->the_post();
-			the_teaser(array('col', 'l6'));
+			$classes= array('col l6');
+			the_teaser($classes);
 		}
 		wp_reset_postdata();
 		?>

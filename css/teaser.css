@@ -84,3 +84,20 @@
 .teaser-row .card .flow-text {
     flex: 1 0 auto;
 }
+
+.teaser-row .card footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: 1.5rem;
+    font-size: small;
+}
+.teaser-row .card footer i {
+    color: #888;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.teaser-row .card footer a {
+    color: #888;
+}
