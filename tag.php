@@ -34,6 +34,7 @@ get_header();
 		}
 		echo '</div>';
 		?>
+		<?php phoenix_pagination($wp_query->max_num_pages); ?>
 	</section>
 </main>
 <?php get_footer(); ?>

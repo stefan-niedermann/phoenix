@@ -249,3 +249,12 @@ ul.tags li a {
 .btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
     background-color: #300;
 }
+
+.pagination {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.pagination li.active {
+    background-color: #600;
+}
