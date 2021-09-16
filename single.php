@@ -44,13 +44,14 @@ while (have_posts()) : the_post();
 				<p class="grey-text">
 					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="Erstellt am <?php echo get_the_date("l, j. F Y, H:m") ?> Uhr" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
 					<?php
-						$creationDateObject = new DateTime($currentPost->post_date);
-						$modifiedDateObject = new DateTime($currentPost->post_modified);
-						if($modifiedDateObject > $creationDateObject) {
+						if(is_user_logged_in()) {
 							?>
-								<time class="tooltipped" data-tooltip="Zuletzt bearbeitet am <?php the_modified_date("l, j. F Y, H:m") ?> Uhr" datetime="<?php the_modified_date("j. M. Y H:i") ?>">
-									<i class="material-icons">edit</i>
-								</time>
+                                <a href="<?php echo get_edit_post_link(get_the_ID()) ?>"
+                                    style="color: inherit; margin-left: 1rem;"
+                                    class="tooltipped"
+                                    data-tooltip="Zuletzt bearbeitet am <?php the_modified_date("l, j. F Y, H:m") ?> Uhr">
+								    <i class="material-icons">edit</i>
+                                </a>
 							<?php
 						}
 					?>
