@@ -93,6 +93,9 @@ get_header();
 							// Translators: used between list items, there is a space after the comma.
 							$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
 
+							// Translators: used between list items, there is a space after the comma.
+							$tag_list = get_the_tag_list('', __(', ', 'twentytwelve'));
+
 							$date = sprintf(
 								'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 								esc_url(get_permalink()),
@@ -118,6 +121,7 @@ get_header();
 							printf(
 								$utility_text,
 								$categories_list,
+                                $tag_list,
 								$date,
 								$author
 							);
