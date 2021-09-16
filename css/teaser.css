@@ -29,7 +29,8 @@
 }
 
 @media (min-width: 600px) {
-    .teaser-row .card h1 {
+    .teaser-row .card h1 a {
+        display: block;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
