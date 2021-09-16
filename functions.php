@@ -127,7 +127,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(array_merge(array('card'), $classes)); ?>>
 			<header class="card-content">
 				<h1>
-					<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark" class="waves-effect"><?php the_title(); ?></a>
 				</h1>
 			</header>
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large", ['class' => 'card-image']); ?></a>
