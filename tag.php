@@ -27,18 +27,11 @@ get_header();
 	</ol>
 	<section>
 		<?php
-		$teaserquery = new WP_Query(array(
-			'posts_per_page' => -1,
-			'post_type' => 'post',
-			'post_status' => 'publish',
-			'tag_id' => get_the_tags()[0]->term_id
-		));
 		echo '<div class="teaser-row">';
-		while ($teaserquery->have_posts()) {
-			$teaserquery->the_post();
+		while (have_posts()) {
+			the_post();
 			the_teaser_entry(array('col', 'l6'));
 		}
-		wp_reset_postdata();
 		echo '</div>';
 		?>
 	</section>
