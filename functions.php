@@ -174,15 +174,8 @@
 			esc_html(get_the_date("d.m.Y"))
 		);
 		?>
-		<div class="timeline-event">
-			<div class="card timeline-content">
-				<a class="card-content" href="<?php get_the_permalink() ?>">
-					<p>
-						<strong><?php echo $date; ?></strong>
-						<?php the_title(); ?>
-					</p>
-				</a>
-			</div>
+		<div class="timeline-event teaser-container">
+			<?php the_teaser_entry(array('timline-content')) ?>
 			<div class="timeline-badge red darken-4 white-text"></div>
 		</div>
 		<?php

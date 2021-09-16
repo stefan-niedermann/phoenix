@@ -13,7 +13,7 @@ get_header(); ?>
 	<p>Wenn Sie der Meinung sind, dass dies ein Fehler von uns ist, können Sie uns gerne kontaktieren. Möglichkeiten zur Kontaktaufnahmen finden Sie im <a href="/impressum/#verantwortlich">Impressum</a>.</p>
 </main>
 <section class="section grey lighten-4">
-	<div class="container teaser-row">
+	<div class="container teaser-container teaser-row">
 		<?php
 		$teaserquery = new WP_Query(array(
 			'posts_per_page' => 2,

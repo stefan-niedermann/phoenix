@@ -69,7 +69,7 @@ get_header();
 				)
 			);
 		?>
-			<div class="teaser-row">
+			<div class="teaser-container teaser-row">
 				<?php
 				$even = false;
 				while (have_posts()) {

@@ -41,7 +41,7 @@ get_header();
 </main>
 <section class="section grey lighten-4">
 	<div class="container">
-		<div class="teaser-row">
+		<div class="teaser-container teaser-row">
 			<?php
 			$teaserquery = new WP_Query(array(
 				'posts_per_page' => 2,
