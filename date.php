@@ -74,7 +74,7 @@ get_header();
 				$even = false;
 				while (have_posts()) {
 					the_post();
-					the_teaser(array());
+					the_teaser(array('col l6'));
 				}
 				?>
 			</div>
