@@ -23,7 +23,7 @@ get_header(); ?>
 		while ($teaserquery->have_posts()) {
 			$teaserquery->the_post();
 			$classes= array('col l6');
-			the_teaser($classes);
+			the_teaser_entry($classes);
 		}
 		wp_reset_postdata();
 		?>
