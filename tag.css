@@ -1,31 +1,3 @@
 /**
  * Template Name: Tag-Seiten
  */
-
-time {
-	display: inline-block;
-	margin-right: .5rem;
-}
-
-section ul {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-}
-
-section ul li {
-	display: flex;
-}
-
-@media (min-width: 600px) {
-	section ul {
-		flex-direction: row;
-	}
-	section ul li {
-		display: inline-block;
-		flex: 1 0 50%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-}

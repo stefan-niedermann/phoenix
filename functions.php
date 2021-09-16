@@ -122,7 +122,7 @@
 	add_filter( 'the_tags', 'phoenix_filter_the_tags' );
 
 	// Prints a complete teaser
-	function the_teaser($classes) {
+	function the_teaser_entry($classes) {
 		?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(array_merge(array('card'), $classes)); ?>>
 			<header class="card-content">
@@ -163,6 +163,28 @@
 				</footer>
 			</div>
 		</article>
+		<?php
+	}
+
+	// Prints a complete teaser
+	function the_timeline_entry() {
+		$date = sprintf(
+			'<time class="entry-date" datetime="%1$s">%2$s</time>',
+			esc_attr(get_the_date("c")),
+			esc_html(get_the_date("d.m.Y"))
+		);
+		?>
+		<div class="timeline-event">
+			<div class="card timeline-content">
+				<a class="card-content" href="<?php get_the_permalink() ?>">
+					<p>
+						<strong><?php echo $date; ?></strong>
+						<?php echo '<a>' . get_the_title() . '</a>'; ?>
+					</p>
+				</a>
+			</div>
+			<div class="timeline-badge red darken-4 white-text"></div>
+		</div>
 		<?php
 	}
 ?>

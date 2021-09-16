@@ -50,7 +50,7 @@ get_header();
 			));
 			while ($teaserquery->have_posts()) {
 				$teaserquery->the_post();
-				the_teaser(array('col', 'l6'));
+				the_teaser_entry(array('col', 'l6'));
 			}
 			wp_reset_postdata();
 			?>

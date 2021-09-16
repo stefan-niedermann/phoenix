@@ -1,13 +1,15 @@
 <?php
+
 /**
  * Template Name: Tags
  * Auflistung von Artikeln mit einem bestimmten Tag.
  */
 
 // Single Style
-wp_enqueue_style('tag', get_template_directory_uri().'/tag.css' );
+wp_enqueue_style('tag', get_template_directory_uri() . '/tag.css');
+wp_enqueue_style('timeline', get_template_directory_uri() . '/css/timeline.css');
 /* Set News to current Menu Item */
-add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
+add_filter('nav_menu_css_class', 'get_news_nav_class', 10, 2);
 
 get_header();
 ?>
@@ -24,24 +26,20 @@ get_header();
 		</li>
 	</ol>
 	<section>
-	<?php
+		<?php
 		$teaserquery = new WP_Query(array(
 			'posts_per_page' => -1,
 			'post_type' => 'post',
 			'post_status' => 'publish',
 			'tag_id' => get_the_tags()[0]->term_id
 		));
-		echo "<ul>";
-		while ( $teaserquery->have_posts() ) {
-      			$teaserquery->the_post();
-			$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-				esc_attr( get_the_date( "c" ) ),
-				esc_html( get_the_date( "d.m.Y") )
-			);
-			echo '<li><span class="catlist-date">' . $date . '</span><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+		echo '<div class="timeline">';
+		while ($teaserquery->have_posts()) {
+			$teaserquery->the_post();
+			the_timeline_entry();
 		}
-		echo "</ul>";
-	?>
+		echo '</div>';
+		?>
 	</section>
 </main>
 <?php get_footer(); ?>
