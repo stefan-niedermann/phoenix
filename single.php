@@ -56,16 +56,7 @@ while (have_posts()) : the_post();
 						}
 					?>
 				</p>
-				<?php
-					$posttags = get_the_tags();
-					if ($posttags && count($posttags) > 0) {
-						echo '<ul class="tags">';
-					foreach($posttags as $tag) {
-						echo '<li><a href="'. esc_attr( get_tag_link( $tag->term_id ) ).'">'.$tag->name . '</a></li>'; 
-					}
-						echo '</ul>';
-					}
-				?>
+				<?php the_tags(); ?>
 			</header>
 			<?php if (!empty($currentPost->post_excerpt)) : ?>
 				<strong>

@@ -6,9 +6,6 @@
 	// Remove Generator-Tag in HTML Markup
 	remove_action("wp_head", "wp_generator");
 
-	// Hide Admin Menu on User Pages
-	show_admin_bar( false );
-
 	// Generate HTML5 Tags
 	add_theme_support( "html5", array( "comment-list", "comment-form", "search-form" ) );
 
@@ -110,4 +107,21 @@
 		}
 	}
 	add_action('manage_post_posts_custom_column', 'phoenix_post_custom_columns');
+
+	function phoenix_filter_the_tags() {
+		$the_tags = get_the_tags();
+	 
+		if ( ! is_wp_error( $the_tags ) ) {
+			echo $the_tags;
+		}
+
+		if ($the_tags && count($the_tags) > 0) {
+			echo '<ul class="tags">';
+			foreach ($the_tags as $tag) {
+				echo '<li><a href="' . esc_attr(get_tag_link($tag->term_id)) . '">' . $tag->name . '</a></li>';
+			}
+			echo '</ul>';
+		}
+	}
+	add_filter( 'the_tags', 'phoenix_filter_the_tags' );
 ?>
