@@ -204,6 +204,27 @@ body>footer a {
     font-size: medium;
 }
 
+ul.tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+ul.tags li {
+    display: inline-block;
+    font-size: 1rem;
+    padding: .2rem .5rem;
+    background: #eef6ff;
+    border: 1px solid #cce2f9;
+    border-radius: .5rem;
+    color: black;
+}
+
+ul.tags li a {
+    color: inherit;
+    cursor: pointer;
+}
+
 @media (min-width: 992px) {
     .colored li {
         flex: 1 0 calc(50% - 1rem);
