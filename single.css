@@ -1,26 +1,6 @@
 /**
  * Template Name: News-Beitrag
  */
-main header ul.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-}
-
-main header ul.tags li {
-    display: inline-block;
-}
-
-main header ul.tags li a {
-    display: inline-block;
-    font-size: 1rem;
-    padding: 0 .5rem;
-    background: #eef6ff;
-    border: 1px solid #cce2f9;
-    border-radius: .5rem;
-    color: black;
-}
-
 main article header h1 + p {
 	 font-style: italic;
 	 font-size: medium;
