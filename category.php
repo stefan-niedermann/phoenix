@@ -43,6 +43,7 @@ get_header();
 			);
 			echo '<li><span class="catlist-date">' . $date . '</span><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
 		}
+		wp_reset_postdata();
 		echo "</ul>";
 	?>
 	</section>

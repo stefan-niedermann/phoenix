@@ -36,8 +36,9 @@ get_header();
 		echo '<div class="teaser-row">';
 		while ($teaserquery->have_posts()) {
 			$teaserquery->the_post();
-			the_teaser_entry(array('col l6'));
+			the_teaser_entry(array('col', 'l6'));
 		}
+		wp_reset_postdata();
 		echo '</div>';
 		?>
 	</section>

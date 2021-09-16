@@ -28,6 +28,7 @@ get_header();
 		$teaserquery->the_post();
 		the_teaser_entry(array('col', 'l6'));
 	}
+	wp_reset_postdata();
 	echo "</div>";
 	?>
 </main>
