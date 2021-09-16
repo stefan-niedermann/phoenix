@@ -13,8 +13,8 @@ wp_enqueue_style('teaser', get_template_directory_uri().'/css/teaser.css' );
 
 get_header();
 ?>
-<main class="container flow-text">
-	<ol class="breadcrumbs">
+<main class="container">
+	<ol class="breadcrumbs flow-text">
 		<li>
 			<span><a href="/news">News</a></span>
 		</li>

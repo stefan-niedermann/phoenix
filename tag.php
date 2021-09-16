@@ -13,8 +13,8 @@ add_filter('nav_menu_css_class', 'get_news_nav_class', 10, 2);
 
 get_header();
 ?>
-<main class="container flow-text">
-	<ol class="breadcrumbs">
+<main class="container">
+	<ol class="breadcrumbs flow-text">
 		<li>
 			<span><a href="/news">News</a></span>
 		</li>
