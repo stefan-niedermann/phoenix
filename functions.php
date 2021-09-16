@@ -158,7 +158,7 @@
 
 					?>
 					<span><i class="material-icons">person</i><?php echo $author; ?></span>
-					<span><i class="material-icons">folder</i><?php echo $categories_list; ?></span>
+					<span><i class="material-icons">folder_open</i><?php echo $categories_list; ?></span>
 					<span><i class="material-icons">event</i><?php echo $date; ?></span>
 				</footer>
 			</div>
