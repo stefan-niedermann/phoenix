@@ -9,7 +9,7 @@ add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
 
 // Single Style
 wp_enqueue_style('category', get_template_directory_uri().'/category.css' );
-wp_enqueue_style('teaser', get_template_directory_uri().'/teaser.css' );
+wp_enqueue_style('teaser', get_template_directory_uri().'/css/teaser.css' );
 
 get_header();
 ?>
