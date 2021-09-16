@@ -6,6 +6,7 @@
  */
 
 wp_enqueue_style('author', get_template_directory_uri() . '/author.css');
+wp_enqueue_style('teaser', get_template_directory_uri() . '/css/teaser.css');
 get_header();
 ?>
 <main class="container flow-text">
