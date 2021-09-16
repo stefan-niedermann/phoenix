@@ -4,32 +4,32 @@
     margin: -.5rem;
 }
 
-.teaser-container .card {
+.teaser-row .card {
     margin: .5rem;
 }
 
 @media (min-width: 980px) {
-    .teaser-container {
+    .teaser-row {
         margin : -1rem;
     }
 
-    .teaser-container .card {
+    .teaser-row .card {
         margin: 1rem;
         width: calc(50% - 2rem);
     }
-    .teaser-container .card img {
+    .teaser-row .card img {
         max-height: 20rem;
         object-fit: cover;
     }
 }
 
-.teaser-container .card h1 {
+.teaser-row .card h1 {
     margin: 1rem 0;
     font-size: 2rem;
 }
 
 @media (min-width: 600px) {
-    .teaser-container .card h1 a {
+    .teaser-row .card h1 a {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -37,27 +37,27 @@
     }
 }
 
-.teaser-container .card h1 a {
+.teaser-row .card h1 a {
     color: #000;
 }
 
-.teaser-container .card .flow-text {
+.teaser-row .card .flow-text {
     flex: 1 0 auto;
 }
 
-.teaser-container .card footer {
+.teaser-row .card footer {
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
     column-gap: 1.5rem;
     font-size: small;
 }
-.teaser-container .card footer i {
+.teaser-row .card footer i {
     color: #888;
     vertical-align: middle;
     margin-right: .5rem;
 }
 
-.teaser-container .card footer a {
+.teaser-row .card footer a {
     color: #888;
 }

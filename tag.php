@@ -7,7 +7,7 @@
 
 // Single Style
 wp_enqueue_style('tag', get_template_directory_uri() . '/tag.css');
-wp_enqueue_style('timeline', get_template_directory_uri() . '/css/timeline.css');
+wp_enqueue_style('teaser', get_template_directory_uri() . '/css/teaser.css');
 /* Set News to current Menu Item */
 add_filter('nav_menu_css_class', 'get_news_nav_class', 10, 2);
 
@@ -33,10 +33,10 @@ get_header();
 			'post_status' => 'publish',
 			'tag_id' => get_the_tags()[0]->term_id
 		));
-		echo '<div class="timeline">';
+		echo '<div class="teaser-row">';
 		while ($teaserquery->have_posts()) {
 			$teaserquery->the_post();
-			the_timeline_entry();
+			the_teaser_entry(array('col l6'));
 		}
 		echo '</div>';
 		?>

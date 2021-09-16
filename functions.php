@@ -165,19 +165,4 @@
 		</article>
 		<?php
 	}
-
-	// Prints a complete teaser
-	function the_timeline_entry() {
-		$date = sprintf(
-			'<time class="entry-date" datetime="%1$s">%2$s</time>',
-			esc_attr(get_the_date("c")),
-			esc_html(get_the_date("d.m.Y"))
-		);
-		?>
-		<div class="timeline-event teaser-container">
-			<?php the_teaser_entry(array('timline-content')) ?>
-			<div class="timeline-badge red darken-4 white-text"></div>
-		</div>
-		<?php
-	}
 ?>
