@@ -34,49 +34,51 @@ get_header(); ?>
 				<?php the_excerpt(); ?>
 				<footer>
 					<?php
-																			// Translators: used between list items, there is a space after the comma.
-																			$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
+					// Translators: used between list items, there is a space after the comma.
+					$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
 
-																			// Translators: used between list items, there is a space after the comma.
-																			$tag_list = get_the_tag_list('', __(', ', 'twentytwelve'));
+					$date = sprintf(
+						'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+						esc_url(get_permalink()),
+						esc_attr(get_the_time()),
+						esc_attr(get_the_date('c')),
+						esc_html(get_the_date())
+					);
 
-																			$date = sprintf(
-																				'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-																				esc_url(get_permalink()),
-																				esc_attr(get_the_time()),
-																				esc_attr(get_the_date('c')),
-																				esc_html(get_the_date())
-																			);
+					$author = sprintf(
+						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+						esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+						esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
+						get_the_author()
+					);
 
-																			$author = sprintf(
-																				'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
-																				esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-																				esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
-																				get_the_author()
-																			);
+					// Translators: 1 is category, 2 is the date and 3 is the author's name.
+					if ($categories_list) {
+						$utility_text = __('Dieser Beitrag wurde in %1$s am %2$s<span class="by-author"> von %3$s</span> veröffentlicht.', 'twentytwelve');
+					} else {
+						$utility_text = __('Dieser Beitrag wurde am %2$s<span class="by-author"> von %3$s</span> veröffentlicht.', 'twentytwelve');
+					}
 
-																			// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
-																			if ($tag_list) {
-																				$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht. Schlagworte: %2$s', 'twentytwelve');
-																			} elseif ($categories_list) {
-																				$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
-																			} else {
-																				$utility_text = __('Dieser Beitrag wurde in %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
-																			}
-
-																			printf(
-																				$utility_text,
-																				$categories_list,
-																				$tag_list,
-																				$date,
-																				$author
-																			);
+					printf(
+						$utility_text,
+						$categories_list,
+						$date,
+						$author
+					);
+					$posttags = get_the_tags();
+					if ($posttags && count($posttags) > 0) {
+						echo '<ul class="tags">';
+						foreach ($posttags as $tag) {
+							echo '<li><a href="' . esc_attr(get_tag_link($tag->term_id)) . '">' . $tag->name . '</a></li>';
+						}
+						echo '</ul>';
+					}
 					?>
 				</footer>
 			</article>
 		<?php
-																		}
-																		wp_reset_postdata();
+		}
+		wp_reset_postdata();
 		?>
 	</div>
 </section>

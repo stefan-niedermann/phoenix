@@ -65,9 +65,6 @@ get_header();
 						// Translators: used between list items, there is a space after the comma.
 						$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
 
-						// Translators: used between list items, there is a space after the comma.
-						$tag_list = get_the_tag_list('', __(', ', 'twentytwelve'));
-
 						$date = sprintf(
 							'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
 							esc_url(get_permalink()),
@@ -83,17 +80,16 @@ get_header();
 							get_the_author()
 						);
 
-						// Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's name.
+						// Translators: 1 is category, 2 is the date and 3 is the author's name.
 						if ($categories_list) {
-							$utility_text = __('Dieser Beitrag wurde in %1$s am %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
+							$utility_text = __('Dieser Beitrag wurde in %1$s am %2$s<span class="by-author"> von %3$s</span> veröffentlicht.', 'twentytwelve');
 						} else {
-							$utility_text = __('Dieser Beitrag wurde in %3$s<span class="by-author"> von %4$s</span> veröffentlicht.', 'twentytwelve');
+							$utility_text = __('Dieser Beitrag wurde am %2$s<span class="by-author"> von %3$s</span> veröffentlicht.', 'twentytwelve');
 						}
 
 						printf(
 							$utility_text,
 							$categories_list,
-							$tag_list,
 							$date,
 							$author
 						);
