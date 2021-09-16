@@ -179,7 +179,7 @@
 				<a class="card-content" href="<?php get_the_permalink() ?>">
 					<p>
 						<strong><?php echo $date; ?></strong>
-						<?php echo '<a>' . get_the_title() . '</a>'; ?>
+						<?php the_title(); ?>
 					</p>
 				</a>
 			</div>
