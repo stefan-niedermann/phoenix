@@ -133,7 +133,8 @@
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail("medium_large", ['class' => 'card-image']); ?></a>
 			<div class="card-content">
 				<?php
-				the_excerpt();
+					the_excerpt();
+					the_tags();
 				?>
 				<footer>
 					<?php
@@ -160,7 +161,6 @@
 					<span><i class="material-icons">folder</i><?php echo $categories_list; ?></span>
 					<span><i class="material-icons">event</i><?php echo $date; ?></span>
 				</footer>
-				<?php the_tags(); ?>
 			</div>
 		</article>
 		<?php
