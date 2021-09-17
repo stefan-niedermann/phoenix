@@ -22,11 +22,3 @@ form input {
 form button {
 	flex: 0 0 auto;
 }
-
-.search-header {
-	padding: 1rem 0;
-}
-
-.search-header h1 {
-	margin: 0;
-}

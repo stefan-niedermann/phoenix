@@ -13,7 +13,7 @@ if(empty(get_search_query()) || empty($wp_query->found_posts)) {
 ?>
 <main class="no-results container center">
 	<form action="?">
-		<input type="search" name="s" placeholder="Suchbegriff eingeben">
+		<input type="search" name="s" placeholder="Suchbegriff eingeben" value="<?php echo get_search_query(true); ?>">
 		<button type="submit" class="btn-floating btn-large waves-effect waves-light red-4"><i class="material-icons">search</i></button>
 	</form>
 	<?php
@@ -25,14 +25,15 @@ if(empty(get_search_query()) || empty($wp_query->found_posts)) {
 <?php
 } else {
 ?>
-<header class="search-header section grey lighten-3">
-	<div class="container center">
-		<h1><?php echo $wp_query->found_posts; ?> Treffer</h1>
-		für "<?php echo get_search_query(true); ?>"
+<main>
+	<div class="container">
+		<ol class="flow-text breadcrumbs">
+			<li>Suche</li>
+			<li>"<?php echo get_search_query(true); ?>"</li>
+			<li><?php echo $wp_query->found_posts; ?> Treffer</li>
+		</ol>
 	</div>
-</header>
-<main class="section container">
-	<section>
+	<section class="container">
 	<?php
 		echo '<div class="teaser-row">';
 		while (have_posts()) {
