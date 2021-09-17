@@ -138,28 +138,24 @@
 				?>
 				<footer>
 					<?php
-					// Translators: used between list items, there is a space after the comma.
-					$categories_list = get_the_category_list(__(', ', 'twentytwelve'));
-
-					$date = sprintf(
-						'<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>',
-						esc_url(get_permalink()),
-						esc_attr(get_the_time()),
-						esc_attr(get_the_date('c')),
-						esc_html(get_the_date())
-					);
-
 					$author = sprintf(
-						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
+						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author"><i class="material-icons">person</i>%3$s</a></span>',
 						esc_url(get_author_posts_url(get_the_author_meta('ID'))),
 						esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
 						get_the_author()
 					);
 
+					$date = sprintf(
+						'<a href="%1$s" title="%2$s" rel="bookmark"><i class="material-icons">event</i><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+						esc_url(get_permalink()),
+						esc_attr(get_the_time()),
+						esc_attr(get_the_date('c')),
+						esc_html(get_the_date())
+					);
 					?>
-					<span><i class="material-icons">person</i><?php echo $author; ?></span>
-					<span><i class="material-icons">folder_open</i><?php echo $categories_list; ?></span>
-					<span><i class="material-icons">event</i><?php echo $date; ?></span>
+					<?php echo $author; ?>
+					<span><i class="material-icons">folder_open</i><?php echo get_the_category_list(', '); ?></span>
+					<?php echo $date; ?>
 				</footer>
 			</div>
 		</article>

@@ -1,8 +1,8 @@
-.pagination {
+ul.pagination {
     text-align: center;
     margin: 2rem 0;
 }
 
-.pagination li.active {
+ul.pagination li.active {
     background-color: #600;
 }
