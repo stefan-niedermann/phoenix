@@ -58,7 +58,7 @@ get_header(); ?>
 					}
 					wp_reset_postdata();
 				?>
-				<a href="<?php get_category_link($category) ?>" class="btn btn-large waves-effect waves-light">Weitere Artikel</a>
+				<a href="<?php echo get_category_link($category->term_id) ?>" class="btn btn-large waves-effect waves-light">Weitere Artikel</a>
 				</div>
 			</section>
 			<?php
