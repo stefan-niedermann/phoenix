@@ -7,10 +7,10 @@
 
 wp_enqueue_style('single', get_template_directory_uri() . '/single.css');
 wp_enqueue_script('single', get_template_directory_uri() . '/single.js', array(), '0.0.1');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 
 /* Set News to current Menu Item */
 add_filter('nav_menu_css_class', 'get_news_nav_class', 10, 2);
-wp_enqueue_style('sidebar', get_template_directory_uri() . '/sidebar.css');
 
 get_header();
 

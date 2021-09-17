@@ -4,7 +4,8 @@
  * Template Name: 404
  * Handelt einen 404-Fehler
  */
-wp_enqueue_style('teaser', get_template_directory_uri() . '/css/teaser.css');
+wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 get_header(); ?>
 <main class="container flow-text">
 	<h1>Die gesuchte Seite wurde nicht gefunden</h1>
@@ -22,8 +23,7 @@ get_header(); ?>
 		));
 		while ($teaserquery->have_posts()) {
 			$teaserquery->the_post();
-			$classes= array('col', 'l6');
-			the_teaser_entry($classes);
+			the_teaser_entry($array('col', 'l6'));
 		}
 		wp_reset_postdata();
 		?>

@@ -18,7 +18,8 @@ $requestedYear = get_the_date(_x('Y', 'yearly archives date format', 'phoenix'))
 }*/
 
 wp_enqueue_style('date', get_template_directory_uri() . '/date.css');
-wp_enqueue_style('teaser', get_template_directory_uri() . '/css/teaser.css');
+wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 
 if (!is_year()) {
 	global $wp_query;

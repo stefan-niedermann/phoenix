@@ -7,7 +7,9 @@
 /* Set News to current Menu Item */
 add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
 
-wp_enqueue_style('teaser', get_template_directory_uri().'/css/teaser.css' );
+wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
+wp_enqueue_style('pagnitation', get_template_directory_uri() . '/css/pagnitation.css');
 
 get_header();
 ?>

@@ -4,9 +4,9 @@
  * Template Name: Startseite
  * Kommt auf der Startseite zum Einsatz
  */
-wp_enqueue_style('sidebar', get_template_directory_uri() . '/sidebar.css');
 wp_enqueue_style('date',    get_template_directory_uri() . '/front-page.css');
-wp_enqueue_style('teaser',  get_template_directory_uri() . '/css/teaser.css');
+wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 get_header();
 ?>
 <header class="section white-text" style="background-image: url(<?php the_post_thumbnail_url(array(1920));  ?>)">
