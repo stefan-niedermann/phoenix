@@ -57,12 +57,12 @@
         display: flex;
         flex-direction: column;
     }
-    .teaser-row .card img {
+    .teaser-row .card-image {
         width: 100%;
     }
     
 	@supports(object-fit: cover) {
-		main article img {
+		.teaser-row .card-image {
 			height: 20rem;
 			object-fit: cover;
 		}
