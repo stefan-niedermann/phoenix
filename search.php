@@ -2,50 +2,30 @@
 /**
  * Template Name: Suche
  */
+wp_enqueue_style('search', get_template_directory_uri() . '/search.css');
+wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
+wp_enqueue_style('pagination', get_template_directory_uri() . '/css/pagination.css');
 
-// Search Style
-wp_enqueue_style('search', get_template_directory_uri().'/search.css' );
-get_header(); ?>
-<main>
-<?php if ( have_posts() ) { ?>
-	<?php while ( have_posts() ) { the_post();
-		$thumbnail = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
-		if(!empty($thumbnail)) {
-			echo '<article id="post-';
-			the_ID();
-			echo '" ';
-			post_class("with-thumbnail");
-			echo '>';
-		} else {
-			echo '<article id="post-';
-			the_ID();
-			echo '" ';
-			post_class();
-			echo '>';
+get_header();
+?>
+<header class="search-header section grey lighten-3">
+	<div class="container center">
+		<h1><?php echo $wp_query->found_posts; ?> Treffer</h1>
+		für "<?php echo get_search_query(true); ?>"
+	</div>
+</header>
+<main class="section container">
+	<section>
+	<?php
+		echo '<div class="teaser-row">';
+		while (have_posts()) {
+			the_post();
+			the_teaser_entry(array('col', 'l6'));
 		}
-		echo $thumbnail;
-		echo '<header class="entry-header"><h1><a href="';
-		echo get_permalink();
-		echo '">';
-		the_title();
-		echo '</a></h1>';
-		$link = sprintf( '<a class="perma" href="%1$s" title="%2$s">%1$s</a>',
-			esc_url( get_permalink() ),
-			esc_attr( get_the_time() )
-		);
-		echo $link;
-		echo '</header><div class="entry-content">';
-		$date = sprintf( '<time class="entry-date" datetime="%1$s">%2$s</time>',
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
-		);
-		echo $date;
-		the_excerpt();
-		echo '</div></article>';
-	}
-}
-?>
+		echo '</div>';;
+	?>
+	<?php phoenix_pagination($wp_query->max_num_pages); ?>
+	</section>
 </main>
-<?php
-get_footer();
-?>
+<?php get_footer(); ?>
