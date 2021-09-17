@@ -1,6 +1,28 @@
 /**
  * Template Name: Suche
  */
+main.no-results {
+	height: calc(100vh - 12rem);
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+	justify-content: center;
+}
+
+form input {
+	flex: 1 1 auto;
+    max-width: 40rem;
+}
+
+form button {
+	flex: 0 0 auto;
+}
+
 .search-header {
 	padding: 1rem 0;
 }
