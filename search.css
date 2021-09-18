@@ -8,6 +8,10 @@ main.no-results {
     justify-content: center;
 }
 
+main.results {
+    overflow: hidden;
+}
+
 form {
     display: flex;
     align-items: center;

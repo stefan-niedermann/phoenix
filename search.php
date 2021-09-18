@@ -16,16 +16,12 @@ if(empty(get_search_query()) || empty($wp_query->found_posts)) {
 		<input type="search" name="s" placeholder="Suchbegriff eingeben" value="<?php echo get_search_query(true); ?>">
 		<button type="submit" class="btn-floating btn-large waves-effect waves-light red-4"><i class="material-icons">search</i></button>
 	</form>
-	<?php
-	if(empty($wp_query->found_posts)) {
-		echo '<p>Hierfür haben wir leider keine Ergebnisse.</p>';
-	}
-	?>
+	<p>Hierfür haben wir leider keine Ergebnisse.</p>
 </main>
 <?php
 } else {
 ?>
-<main>
+<main class="results grey lighten-4">
 	<div class="container">
 		<ol class="flow-text breadcrumbs">
 			<li>Suche</li>
@@ -34,14 +30,14 @@ if(empty(get_search_query()) || empty($wp_query->found_posts)) {
 		</ol>
 	</div>
 	<section class="container">
-	<?php
-		echo '<div class="teaser-row">';
-		while (have_posts()) {
-			the_post();
-			the_teaser_entry(array('col', 'l6'));
-		}
-		echo '</div>';;
-	?>
+		<div class="teaser-row">
+		<?php
+			while (have_posts()) {
+				the_post();
+				the_teaser_entry(array('col', 'l6'));
+			}
+		?>
+	</div>
 	<?php phoenix_pagination($wp_query->max_num_pages); ?>
 	</section>
 </main>
