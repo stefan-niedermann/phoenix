@@ -10,9 +10,9 @@ wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 get_header();
 ?>
-<main class="section">
-	<div class="flow-text container">
-		<h1><?php the_author_meta('display_name'); ?></h1>
+<main class="container">
+	<h1 class="section center"><?php the_author_meta('display_name'); ?></h1>
+	<div class="flow-text">
 		<p><?php the_author_meta('description'); ?></p>
 		<?php if (!empty(get_the_author_meta("user_url"))) { ?>
 			<h2>Website</h2>
