@@ -12,10 +12,13 @@ get_header(); ?>
 	<h1 class="section center"><?php _e('Page not found', 'phoenix') ?></h1>
 	<i class="material-icons">search</i>
 	<p><?php _e('Oops, the page you are looking for could not be found. Either it is available on a new location or never existed.', 'phoenix'); ?></p>
-	<p>Möchten Sie stattdessen auf unsere <a href="/" title="Startseite">Startseite</a> gehen?</p>
+	<p><?php printf(
+		__('Do you want to go to the %1$s instead?', 'phoenix'),
+		sprintf('<a href="%1$s">%2$s</a>', get_home_url(), __('homepage', 'phoenix'))
+	); ?></p>
 	<p><?php printf(
 			__('If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %1$s page.', 'phoenix'),
-			printf('<a href="%1$s">%2$s</a>', __('imprint url', 'phoenix'), __('imprint', 'phoenix'))
+			sprintf('<a href="%1$s">%2$s</a>', __('imprint url', 'phoenix'), __('imprint', 'phoenix'))
 		); ?></p>
 </main>
 <section class="section grey lighten-4">
