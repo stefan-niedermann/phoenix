@@ -46,8 +46,8 @@ class NewsMetaWidget extends WP_Widget {
  
 		$currentPost = get_post();
 	
-		$categories_list = get_the_category_list( __( ' ', 'twentytwelve' ) );
-		$tags_list = get_the_tag_list( __( ' ', 'twentytwelve' ) );
+		$categories_list = get_the_category_list( __( ' ' ) );
+		$tags_list = get_the_tag_list( __( ' ' ) );
 		$authorObject = get_userdata($currentPost->post_author);
 		$authorName = $authorObject->first_name.' '.$authorObject->last_name;
 		$creationDateObject = new DateTime($currentPost->post_date);

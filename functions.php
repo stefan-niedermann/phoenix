@@ -23,8 +23,8 @@
 
 	// Register Navigation Menus
 	function phoenix_register_nav_menus() {
-		register_nav_menu("header-menu",__( "Header Menu" ));
-		register_nav_menu("footer-menu",__( "Footer Menu" ));
+		register_nav_menu("header-menu",__( "Header Menu", 'phoenix' ));
+		register_nav_menu("footer-menu",__( "Footer Menu", 'phoenix' ));
 	}
 	add_action( "init", "phoenix_register_nav_menus" );
 
@@ -32,7 +32,7 @@
 	function phoenix_register_sidebars() {
 		register_sidebar(array(
 			"id" => "main-sidebar",
-			"name" => __( "Main Sidebar" ),
+			"name" => __( "Main Sidebar", 'phoenix' ),
 			'before_widget' => '<li>',
 			'after_widget' => '</div></li>',
 			'before_title' => '<div class="collapsible-header">',
@@ -40,7 +40,7 @@
 		));
 		register_sidebar(array(
 			"id" => "post-sidebar",
-			"name" => __( "Post Sidebar" ),
+			"name" => __( "Post Sidebar", 'phoenix' ),
 			'before_widget' => '<aside>',
 			'after_widget' => '</aside>',
 			'before_title' => '<h3>',

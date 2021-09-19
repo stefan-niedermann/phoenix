@@ -15,6 +15,21 @@ msgid "News"
 msgstr "News"
 
 
+# Backend
+
+msgid "Header Menu"
+msgstr "Hauptmenü"
+
+msgid "Footer Menu"
+msgstr "Footer Menü"
+
+msgid "Main Sidebar"
+msgstr "Haupt-Sidebar"
+
+msgid "Post Sidebar"
+msgstr "Artikel-Sidebar"
+
+
 # 404.php
 
 msgid "Page not found"

@@ -31,7 +31,7 @@ while (have_posts()) : the_post();
 				<h1><?php echo the_title(); ?></h1>
 				<p class="grey-text">
 					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="<?php printf(
-						__('Created on %1$s'),
+						__('Created on %1$s', 'phoenix'),
 						get_the_date("l, j. F Y, H:m")
 					); ?>" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
 					<?php
@@ -41,7 +41,7 @@ while (have_posts()) : the_post();
                                     style="color: inherit; margin-left: 1rem;"
                                     class="tooltipped"
                                     data-tooltip="<?php printf(
-										__('Last edited on %1$s'),
+										__('Last edited on %1$s', 'phoenix'),
 										the_modified_date("l, j. F Y, H:m")
 									) ?>">
 								    <i class="material-icons">edit</i>
