@@ -14,7 +14,7 @@ get_header(); ?>
 	<p><?php _e('Oops, the page you are looking for could not be found. Either it is available on a new location or never existed.', 'phoenix'); ?></p>
 	<p>Möchten Sie stattdessen auf unsere <a href="/" title="Startseite">Startseite</a> gehen?</p>
 	<p><?php printf(
-			__('If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %s page.', 'phoenix'),
+			__('If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %1$s page.', 'phoenix'),
 			printf('<a href="%1$s">%2$s</a>', __('imprint url', 'phoenix'), __('imprint', 'phoenix'))
 		); ?></p>
 </main>

@@ -12,10 +12,10 @@ msgstr "Seite nicht gefunden"
 msgid "Oops, the page you are looking for could not be found. Either it is available on a new location or never existed."
 msgstr "Hoppla, die gesuchte Seite konnten wir leider nicht finden. Entweder ist sie unter einer neuen Adresse verfügbar oder sie hat nie existiert."
 
-msgid "If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %s page."
-msgstr "Wenn Sie der Meinung sind, dass dies ein Fehler von uns ist, können Sie uns gerne kontaktieren. Möglichkeiten zur Kontaktaufnahmen finden Sie im %s."
+msgid "If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %1$s page."
+msgstr "Wenn Sie der Meinung sind, dass dies ein Fehler von uns ist, können Sie uns gerne kontaktieren. Möglichkeiten zur Kontaktaufnahmen finden Sie im %1$s."
 
-msgid "imprint_url"
+msgid "imprint url"
 msgstr "/impressum/#verantwortlich"
 
 msgid "imprint"

@@ -56,11 +56,11 @@
 		return $classes;
 	}
 
-	function phoenix_ffw_remove_hentry( $classes ) {
+	function phoenix_remove_hentry( $classes ) {
 		$classes = array_diff( $classes, array( 'hentry' ) );
 		return $classes;
 	}
-	add_filter( 'post_class','phoenix_ffw_remove_hentry' );
+	add_filter( 'post_class','phoenix_remove_hentry' );
 
 	/* http://wordpress.stackexchange.com/questions/2802/display-a-portion-branch-of-the-menu-tree-using-wp-nav-menu/2809#2809 */
 	add_filter( 'wp_nav_menu_objects', 'submenu_limit', 10, 2 );
