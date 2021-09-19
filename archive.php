@@ -17,21 +17,15 @@ get_header();
 <main class="grey lighten-4">
 	<div class="container">
 		<ol class="breadcrumbs flow-text">
-			<li>
-				<span><a href="/news">News</a></span>
-			</li>
-			<li>
-				<span><?php
+			<li><a href="/news"><?php _e('News', 'phoenix') ?></a></li>
+			<li><?php
 				if(is_tag()) {
-					echo 'Tags';
+					_e('Tags', 'phoenix');
 				} elseif(is_category()) {
-					echo 'Kategorien';
+					_e('Categories', 'phoenix');
 				}
-				?></span>
-			</li>
-			<li>
-				<span><?php echo single_cat_title("", false); ?></span>
-			</li>
+				?></li>
+			<li><?php echo single_cat_title("", false); ?></li>
 		</ol>
 	</div>
 	<section class="container">

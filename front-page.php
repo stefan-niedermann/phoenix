@@ -12,7 +12,7 @@ get_header();
 <header class="section white-text" style="background-image: url(<?php the_post_thumbnail_url(array(1920));  ?>)">
 	<div>
 		<div class="container">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Retten, Löschen, Schützen, Bergen">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="<?php _e('Logo description', 'phoenix'); ?>">
 			<div class="hgroup">
 				<h1><?php bloginfo("name"); ?></h1>
 				<h2><?php bloginfo("description"); ?></h2>

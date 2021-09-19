@@ -6,6 +6,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 
+# General
+
+msgid "Logo description"
+msgstr "Retten, Löschen, Schützen, Bergen"
+
+msgid "News"
+msgstr "News"
+
+
+# 404.php
+
 msgid "Page not found"
 msgstr "Seite nicht gefunden"
 
@@ -26,3 +37,33 @@ msgstr "Möchten Sie stattdessen auf unsere %1$s gehen?"
 
 msgid "homepage"
 msgstr "Startseite"
+
+
+# archive.php
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Categories"
+msgstr "Kategorien"
+
+
+# author.php
+
+msgid "Website"
+msgstr "Website"
+
+
+# search.php
+
+msgid "We could not find any results for that."
+msgstr "Hierfür haben wir leider keine Ergebnisse."
+
+
+# single.php
+
+msgid "Created on %1$s"
+msgstr "Erstellt am %1$s Uhr"
+
+msgid "Last edited on %1$s"
+msgstr "Zuletzt bearbeitet am %1$s Uhr"

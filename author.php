@@ -15,7 +15,7 @@ get_header();
 	<div class="flow-text">
 		<p><?php the_author_meta('description'); ?></p>
 		<?php if (!empty(get_the_author_meta("user_url"))) { ?>
-			<h2>Website</h2>
+			<h2><?php _e('Website', 'phoenix'); ?></h2>
 			<ul class="author-meta">
 				<li><a href="<?php the_author_meta('user_url'); ?>"><i class="material-icons">public</i><?php the_author_meta('user_url'); ?></a></li>
 			</ul>

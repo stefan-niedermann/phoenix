@@ -16,7 +16,7 @@ if(empty(get_search_query()) || empty($wp_query->found_posts)) {
 		<input type="search" name="s" placeholder="Suchbegriff eingeben" value="<?php echo get_search_query(true); ?>">
 		<button type="submit" class="btn-floating btn-large waves-effect waves-light red-4"><i class="material-icons">search</i></button>
 	</form>
-	<p>Hierfür haben wir leider keine Ergebnisse.</p>
+	<p><?php _e('We could not find any results for that.', 'phoenix'); ?></p>
 </main>
 <?php
 } else {

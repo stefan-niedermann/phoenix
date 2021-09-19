@@ -22,34 +22,28 @@ while (have_posts()) : the_post();
 	?>
 	<main class="container flow-text">
 		<ol class="breadcrumbs">
-			<li>
-				<a href="/news">
-					<span>News</span>
-				</a>
-			</li>
-			<li>
-				<a href="/news/<?php echo $creationYear; ?>">
-					<span><?php echo $creationYear; ?></span>
-				</a>
-			</li>
-			<li>
-				<a href="<?php echo get_permalink(); ?>">
-					<span><?php echo $currentPost->post_title; ?></span>
-				</a>
-			</li>
+			<li><a href="/news"><?php _e('News'); ?></a></li>
+			<li><a href="/news/<?php echo $creationYear; ?>"><?php echo $creationYear; ?></a></li>
+			<li><a href="<?php echo get_permalink(); ?>"><?php echo $currentPost->post_title; ?></a></li>
 		</ol>
 		<article>
 			<header>
 				<h1><?php echo the_title(); ?></h1>
 				<p class="grey-text">
-					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="Erstellt am <?php echo get_the_date("l, j. F Y, H:m") ?> Uhr" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
+					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="<?php printf(
+						__('Created on %1$s'),
+						get_the_date("l, j. F Y, H:m")
+					); ?>" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
 					<?php
 						if(is_user_logged_in()) {
 							?>
                                 <a href="<?php echo get_edit_post_link(get_the_ID()) ?>"
                                     style="color: inherit; margin-left: 1rem;"
                                     class="tooltipped"
-                                    data-tooltip="Zuletzt bearbeitet am <?php the_modified_date("l, j. F Y, H:m") ?> Uhr">
+                                    data-tooltip="<?php printf(
+										__('Last edited on %1$s'),
+										the_modified_date("l, j. F Y, H:m")
+									) ?>">
 								    <i class="material-icons">edit</i>
                                 </a>
 							<?php

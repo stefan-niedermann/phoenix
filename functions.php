@@ -15,6 +15,7 @@
 	// Featured Images
 	add_theme_support( 'post-thumbnails' );
 	
+	// Register translations
 	function phoenix_load_theme_textdomain() {
 		load_theme_textdomain( 'phoenix', get_template_directory() . '/languages' );
 	}

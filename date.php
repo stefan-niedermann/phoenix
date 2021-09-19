@@ -34,16 +34,8 @@ get_header();
 <main class="grey lighten-4">
 	<div class="container">
 		<ol class="flow-text breadcrumbs">
-			<li>
-				<a href="/news">
-					News
-				</a>
-			</li>
-			<li>
-				<a href="/news/<?php echo $requestedYear; ?>">
-					<?php echo $requestedYear; ?>
-				</a>
-			</li>
+			<li><a href="/news"><?php _e('News', 'phoenix'); ?></a></li>
+			<li><a href="/news/<?php echo $requestedYear; ?>"><?php echo $requestedYear; ?></a></li>
 		</ol>
 	</div>
 	<div class="container">
