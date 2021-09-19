@@ -11,9 +11,12 @@ get_header(); ?>
 <main class="container flow-text">
 	<h1 class="section center"><?php _e('Page not found', 'phoenix') ?></h1>
 	<i class="material-icons">search</i>
-	<p>Hoppla, die gesuchte Seite konnten wir leider nicht finden. Entweder ist sie unter einer neuen Adresse verfügbar oder sie hat nie existiert.</p>
+	<p><?php _e('Oops, the page you are looking for could not be found. Either it is available on a new location or never existed.', 'phoenix'); ?></p>
 	<p>Möchten Sie stattdessen auf unsere <a href="/" title="Startseite">Startseite</a> gehen?</p>
-	<p>Wenn Sie der Meinung sind, dass dies ein Fehler von uns ist, können Sie uns gerne kontaktieren. Möglichkeiten zur Kontaktaufnahmen finden Sie im <a href="/impressum/#verantwortlich">Impressum</a>.</p>
+	<p><?php printf(
+			__('If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %s page.', 'phoenix'),
+			printf('<a href="%1$s">%2$s</a>', __('imprint url', 'phoenix'), __('imprint', 'phoenix'))
+		); ?></p>
 </main>
 <section class="section grey lighten-4">
 	<div class="container teaser-row">

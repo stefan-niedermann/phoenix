@@ -7,4 +7,16 @@ msgstr ""
 "PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
 
 msgid "Page not found"
-msgstr "Seite nicht gefunden (404)"
+msgstr "Seite nicht gefunden"
+
+msgid "Oops, the page you are looking for could not be found. Either it is available on a new location or never existed."
+msgstr "Hoppla, die gesuchte Seite konnten wir leider nicht finden. Entweder ist sie unter einer neuen Adresse verfügbar oder sie hat nie existiert."
+
+msgid "If you think, that this is a mistake by us, you are welcome to get in touch with us. Contact options can be found on the %s page."
+msgstr "Wenn Sie der Meinung sind, dass dies ein Fehler von uns ist, können Sie uns gerne kontaktieren. Möglichkeiten zur Kontaktaufnahmen finden Sie im %s."
+
+msgid "imprint_url"
+msgstr "/impressum/#verantwortlich"
+
+msgid "imprint"
+msgstr "Impressum"
