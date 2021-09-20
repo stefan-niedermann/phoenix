@@ -59,7 +59,9 @@ get_header(); ?>
 					}
 					wp_reset_postdata();
 				?>
-				<a href="<?php echo get_category_link($category->term_id) ?>" class="btn btn-large waves-effect waves-light">Weitere Artikel</a>
+				<a href="<?php echo get_category_link($category->term_id) ?>" class="btn btn-large waves-effect waves-light">
+					<?php _e('More posts', 'phoenix'); ?> <i class="material-icons right">expand_more</i>
+				</a>
 				</div>
 			</section>
 			<?php
