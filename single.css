@@ -1,6 +1,10 @@
 /**
  * Template Name: News-Beitrag
  */
+ main {
+	min-height: calc(100vh - 11.4rem);
+}
+
 main article header h1 + p {
 	 font-style: italic;
 	 font-size: medium;
