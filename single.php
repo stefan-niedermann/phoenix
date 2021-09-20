@@ -34,21 +34,24 @@ while (have_posts()) : the_post();
 						__('Created on %1$s', 'phoenix'),
 						get_the_date("l, j. F Y, H:m")
 					); ?>" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
+					<?php if(is_user_logged_in()) { ?>
+						<a href="<?php echo get_edit_post_link(get_the_ID()) ?>"
+							style="color: inherit; margin-left: 1rem;"
+							class="tooltipped"
+							data-tooltip="<?php printf(
+								__('Last edited on %1$s', 'phoenix'),
+								the_modified_date("l, j. F Y, H:m")
+							) ?>">
+							<i class="material-icons">edit</i>
+						</a>
 					<?php
-						if(is_user_logged_in()) {
-							?>
-                                <a href="<?php echo get_edit_post_link(get_the_ID()) ?>"
-                                    style="color: inherit; margin-left: 1rem;"
-                                    class="tooltipped"
-                                    data-tooltip="<?php printf(
-										__('Last edited on %1$s', 'phoenix'),
-										the_modified_date("l, j. F Y, H:m")
-									) ?>">
-								    <i class="material-icons">edit</i>
-                                </a>
-							<?php
+						if(shortcode_exists('wp-piwik')) {
+							$hits = do_shortcode('[wp-piwik module="post" period="range" date="' . date('Y-m-d', get_post_timestamp()) . ',today" key="nb_hits"]');
+							if(intval($hits) > 1) { 
+								?><i class="material-icons" style="margin-left: 1rem; margin-right: .5rem;">visibility</i> <?php echo $hits; ?><?php
+							}
 						}
-					?>
+					} ?>
 				</p>
 				<?php the_tags(); ?>
 			</header>

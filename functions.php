@@ -161,7 +161,15 @@
 					?>
 					<?php echo $author; ?>
 					<span><i class="material-icons">folder_open</i><?php echo get_the_category_list(', '); ?></span>
-					<?php echo $date; ?>
+					<?php
+						echo $date;
+						if(is_user_logged_in() && shortcode_exists('wp-piwik')) {
+							$hits = do_shortcode('[wp-piwik module="post" period="range" date="' . date('Y-m-d', get_post_timestamp()) . ',today" key="nb_hits"]');
+							if(intval($hits) > 1) {
+								?><span><i class="material-icons">visibility</i> <?php echo $hits; ?></span><?php
+							}
+						}
+					?>
 				</footer>
 			</div>
 		</article>
