@@ -36,7 +36,7 @@ jobs:
       - name: Install gettext
         run: sudo apt install gettext
       - name: Compile .po files to .mo files
-        run: msgfmt languages/de_DE.po -o languages/de_DE.mo
+        run: msgfmt src/languages/de_DE.po -o src/languages/de_DE.mo
       - name: Stash bundle
         uses: actions/upload-artifact@v2
         with:
