@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bundle
-          path: dist/fax-generator/
+          path: ./
 
   deploy:
     name: Deploy
@@ -49,7 +49,7 @@ jobs:
           name: bundle
           path: ./
       - name: Remove unnecessary files
-        run: rm -rf .git .gitlab-ci.yml .github .gitignore LICENSE
+        run: rm -rf .git .github .gitignore LICENSE
       - name: Install lftp
         run: sudo apt install lftp
       - name: Pull .well-known
