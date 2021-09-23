@@ -17,6 +17,6 @@ deploy_job:
     - apt-get update
     - apt-get --yes --force-yes install imagemagick lftp gettext
     - msgfmt languages/de_DE.po -o languages/de_DE.mo
-    - rm -rf .git .gitlab-ci.yml .gitignore
+    - rm -rf .git .gitlab-ci.yml .github .gitignore LICENSE
     - lftp -u $FTP_PRODUCTION_USER,$FTP_PRODUCTION_PASSWORD -e "set ssl:verify-certificate no; mirror -R ./ $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA; rm -r $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH $FTP_PRODUCTION_PATH-alt; mv $FTP_PRODUCTION_PATH-$CI_COMMIT_SHA $FTP_PRODUCTION_PATH; quit;" $FTP_PRODUCTION_URL
 
