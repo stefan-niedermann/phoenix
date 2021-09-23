@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
-	// Prevent Context Menu Click
-	var elements = document.querySelectorAll("main img");
-	for(var i = 0; i < elements.length; i++) {
-		elements[i].addEventListener("contextmenu", function(e) {
-			e.preventDefault();
-		}, false);
-	};
-}, false);
+try {
+	document.addEventListener('DOMContentLoaded', () => {
+		// Prevent Context Menu Click
+		Array.from(document.querySelectorAll('main img'))
+			.forEach(img => img.addEventListener('contextmenu', (e) => e.preventDefault(), false));
+	}, false);
+} catch(e) {
+	console.error(e);
+}
