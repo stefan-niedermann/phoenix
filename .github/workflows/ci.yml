@@ -21,12 +21,18 @@ jobs:
       - name: Run validation
         run: find . -name '*.js*' -print0 | xargs -0 -n1 -P8 node --check
 
-  i18n:
-    name: Generate translations
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install npm dependencies
+        run: npm i
+      - name: Copy npm dependencies to correct places
+        run: |
+          cp node_modules/@materializecss/materialize/dist/css/materialize.min.css src/css/
+          cp node_modules/@materializecss/materialize/dist/js/materialize.min.js src/js/
       - name: Install gettext
         run: sudo apt install gettext
       - name: Compile .po files to .mo files
@@ -35,12 +41,12 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: bundle
-          path: ./
+          path: ./src
 
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: [php-lint, js-lint, i18n]
+    needs: [php-lint, js-lint, build]
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Unstash bundle
@@ -48,8 +54,6 @@ jobs:
         with:
           name: bundle
           path: ./
-      - name: Remove unnecessary files
-        run: rm -rf .git .github .gitignore LICENSE
       - name: Install lftp
         run: sudo apt install lftp
       - name: Push new bundle to remote

@@ -34,10 +34,10 @@
 	<link rel="pingback" href="<?php bloginfo("pingback_url"); ?>" />
 	<?php
 	// Normalizer and Stylesheets
-	wp_enqueue_style('materialize-css', get_template_directory_uri() . '/css/materialize-1.0.0.min.css', array(), '1.0.0');
-	wp_enqueue_style('main', get_template_directory_uri() . '/style.css');
-	wp_enqueue_script('materialize-js', get_template_directory_uri() . '/js/materialize-1.0.0.min.js', array(), '1.0.0');
-	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js');
+	wp_enqueue_style('materialize-css', get_template_directory_uri() . '/css/materialize.min.css', array(), '1.1.0');
+	wp_enqueue_style('main', get_template_directory_uri() . '/style.css', array(), '3.1.0');
+	wp_enqueue_script('materialize-js', get_template_directory_uri() . '/js/materialize.min.js', array(), '1.1.0');
+	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), '3.1.0');
 	?>
 	<?php wp_head(); ?>
 </head>

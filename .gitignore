@@ -1,1 +1,2 @@
-languages/*.mo
+node_modules/
+*.mo

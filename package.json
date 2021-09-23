@@ -1,0 +1,27 @@
+{
+  "name": "phoenix",
+  "version": "3.1.0",
+  "description": "Wordpress theme based on Materialize",
+  "main": "single.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefan-niedermann/phoenix.git"
+  },
+  "keywords": [
+    "wordpress",
+    "wordpress-theme",
+    "materializecss",
+    "materialize"
+  ],
+  "author": "Stefan Niedermann",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/stefan-niedermann/phoenix/issues"
+  },
+  "homepage": "https://github.com/stefan-niedermann/phoenix#readme",
+  "dependencies": {
+    "@materializecss/materialize": "^1.1.0-alpha"
+  }
+}

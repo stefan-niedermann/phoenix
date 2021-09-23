@@ -5,14 +5,11 @@
  * Author URI: http://www.niedermann.it/
  * Description: Phoenix Theme, designed for voluntary firefighters of Feuerwehr Aurachhöhe, based on Materialize CSS.
  * Version: 3.1.0
- * License: Closed Source
+ * License: AGPLv3+
  * License URI: 
  * Text Domain: phoenix
  */
 
-/* Materialize CSS */
-
-@import url(css/materialize-1.0.0.min.css);
 /* Material icons */
 
 @font-face {
