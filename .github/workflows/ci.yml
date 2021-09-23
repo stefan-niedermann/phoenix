@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run validation
-        run: find . -name '*.php*' -print0 | xargs -0 -n1 -P8 php -l
+        run: find . -name '*.php' -print0 | xargs -0 -n1 -P8 php -l
 
   js-lint:
     name: Javascript lint
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run validation
-        run: find . -name '*.js*' -print0 | xargs -0 -n1 -P8 node --check
+        run: find . -name '*.js' -print0 | xargs -0 -n1 -P8 node --check
 
   build:
     name: Build
