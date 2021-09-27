@@ -1,4 +1,3 @@
-const sp = require('synchronized-promise');
 const fs = require('fs-extra');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -14,4 +13,4 @@ const build = async () => {
     ['de_DE'].forEach(async (lang) => await exec(`msgfmt dist/languages/${lang}.po -o dist/languages/${lang}.mo`));
 }
 
-sp(build)();
+build();
