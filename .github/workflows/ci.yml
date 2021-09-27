@@ -33,6 +33,8 @@ jobs:
         run: |
           cp node_modules/@materializecss/materialize/dist/css/materialize.min.css src/css/
           cp node_modules/@materializecss/materialize/dist/js/materialize.min.js src/js/
+      - name: Remove node_modules
+        run: rm -rf node_modules
       - name: Install gettext
         run: sudo apt install gettext
       - name: Compile .po files to .mo files
