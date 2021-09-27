@@ -4,7 +4,7 @@
  * Author: Niedermann IT-Dienstleistungen
  * Author URI: http://www.niedermann.it/
  * Description: Phoenix Theme, designed for voluntary firefighters of Feuerwehr Aurachhöhe, based on Materialize CSS.
- * Version: 3.1.0
+ * Version: 3.1.1
  * License: AGPLv3+
  * License URI: 
  * Text Domain: phoenix
@@ -51,7 +51,16 @@ p {
 }
 
 blockquote {
-    border-left-color: #900;
+    border-left-color: #800;
+}
+
+blockquote p {
+    margin-bottom: 0;
+}
+
+blockquote cite {
+    font-size: medium;
+    color: #444;
 }
 
 strong {
