@@ -3,23 +3,14 @@ name: CI pipeline
 on: [ push, pull_request ]
 
 jobs:
-  php-lint:
-    name: PHP lint
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run validation
-        run: find . -name '*.php' -print0 | xargs -0 -n1 -P8 php -l
-
-  js-lint:
-    name: Javascript lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run validation
-        run: find . -name '*.js' -print0 | xargs -0 -n1 -P8 node --check
+      - name: Run linter
+        run: npm run lint
 
   build:
     name: Build
@@ -27,28 +18,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Install npm dependencies
-        run: npm i
-      - name: Copy npm dependencies to correct places
+      - name: Install dependencies
         run: |
-          cp node_modules/@materializecss/materialize/dist/css/materialize.min.css src/css/
-          cp node_modules/@materializecss/materialize/dist/js/materialize.min.js src/js/
-      - name: Remove node_modules
-        run: rm -rf node_modules
-      - name: Install gettext
-        run: sudo apt install gettext
-      - name: Compile .po files to .mo files
-        run: msgfmt src/languages/de_DE.po -o src/languages/de_DE.mo
+          sudo apt install gettext
+          npm install
+      - name: Build project
+        run: npm run build
       - name: Stash bundle
         uses: actions/upload-artifact@v2
         with:
           name: bundle
-          path: ./src
+          path: ./dist
 
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    needs: [php-lint, js-lint, build]
+    needs: [lint, build]
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Unstash bundle
