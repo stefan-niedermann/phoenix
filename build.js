@@ -1,3 +1,4 @@
+const sp = require('synchronized-promise');
 const fs = require('fs-extra');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -12,4 +13,4 @@ const build = async () => {
     });
 }
 
-build();
+sp(build);

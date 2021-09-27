@@ -29,6 +29,7 @@
     "@materializecss/materialize": "^1.1.0-alpha"
   },
   "devDependencies": {
-    "fs-extra": "^10.0.0"
+    "fs-extra": "^10.0.0",
+    "synchronized-promise": "^0.3.1"
   }
 }
