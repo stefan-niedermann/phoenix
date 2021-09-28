@@ -18,8 +18,10 @@ const prepareWorkspace = (dist) => {
 const copyAllSources = (src, dist) => fs.copySync(src, dist);
 
 const copyNecessaryDependencies = (dist) => {
-    fs.copySync('node_modules/@materializecss/materialize/dist/css/materialize.min.css', `${dist}/css/materialize.min.css`);
     fs.copySync('node_modules/@materializecss/materialize/dist/js/materialize.min.js', `${dist}/js/materialize.min.js`);
+    fs.copySync('node_modules/@materializecss/materialize/dist/css/materialize.min.css', `${dist}/css/materialize.min.css`);
+    fs.copySync('node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff', `${dist}/fonts/material-design-icons.woff`);
+    fs.copySync('node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2', `${dist}/fonts/material-design-icons.woff2`);
 }
 
 const translate = (i18n) =>

@@ -16,7 +16,8 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(fonts/material-icons-v48.woff2) format('woff2');
+    src: url(fonts/material-design-icons.woff2) format('woff2'),
+         url(fonts/material-design-icons.woff) format('woff');
 }
 
 .material-icons {
