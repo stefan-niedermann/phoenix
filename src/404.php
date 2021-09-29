@@ -1,9 +1,4 @@
 <?php
-
-/**
- * Template Name: 404
- * Handelt einen 404-Fehler
- */
 wp_enqueue_style('404', get_template_directory_uri() . '/404.css');
 wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
