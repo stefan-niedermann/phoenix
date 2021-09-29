@@ -61,7 +61,13 @@ blockquote p {
 
 blockquote cite {
     font-size: medium;
+    float: right;
     color: #444;
+}
+
+blockquote cite::before {
+    content: "\a— ";
+    white-space: pre;
 }
 
 strong {
