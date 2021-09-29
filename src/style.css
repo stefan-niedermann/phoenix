@@ -55,6 +55,12 @@ blockquote {
     border-left-color: #800;
 }
 
+blockquote::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 blockquote p {
     margin-bottom: 0;
 }
