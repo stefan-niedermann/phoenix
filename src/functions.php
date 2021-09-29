@@ -1,8 +1,4 @@
 <?php
-/**
- * Template Name: Theme-Funktionen
- */
-
 	// Remove Generator-Tag in HTML Markup
 	remove_action("wp_head", "wp_generator");
 

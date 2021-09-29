@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: Fallback
- * Generisches Template für eine Seite, der kein Template zugewiesen ist
+ * Template Name: Standard-Template
  */
 wp_enqueue_style('index', get_template_directory_uri() . '/index.css');
 

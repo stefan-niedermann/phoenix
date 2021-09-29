@@ -1,9 +1,4 @@
 <?php
-
-/**
- * Template Name: Startseite
- * Kommt auf der Startseite zum Einsatz
- */
 wp_enqueue_style('date',    get_template_directory_uri() . '/front-page.css');
 wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');

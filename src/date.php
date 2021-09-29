@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Template Name: News-Übersicht
- * Jahres-Basierende Übersicht über alle News-Einträge
- */
-
 /* Set News to current Menu Item */
 add_filter('nav_menu_css_class', 'get_news_nav_class', 10, 2);
 

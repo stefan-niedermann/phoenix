@@ -1,9 +1,4 @@
 <?php
-/**
- * Template Name: Archiv-Seiten
- * Auflistung von Artikeln in einer bestimmten Kategorie oder mit einem bestimmten Tag.
- */
-
 /* Set News to current Menu Item */
 add_filter( 'nav_menu_css_class', 'get_news_nav_class', 10, 2 );
 

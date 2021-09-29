@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Template Name: News-Beitrag
- * Zeigt einen einzelnen Beitrag auf der News-Seite an.
- */
-
 wp_enqueue_style('single', get_template_directory_uri() . '/single.css');
 wp_enqueue_script('single', get_template_directory_uri() . '/single.js', array(), '0.0.1');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');

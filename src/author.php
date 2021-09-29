@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Template Name: Autoren
- * Deteilinformationen und Beschreibungen über die Autoren der Artikel.
- */
-
 wp_enqueue_style('author', get_template_directory_uri() . '/author.css');
 wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
