@@ -47,7 +47,6 @@ while (have_posts()) : the_post();
 						}
 					} ?>
 				</p>
-				<?php the_tags(); ?>
 			</header>
 			<?php if (!empty($currentPost->post_excerpt)) : ?>
 				<strong>
@@ -55,6 +54,7 @@ while (have_posts()) : the_post();
 				</strong>
 			<?php endif; ?>
 			<div><?php the_content(); ?></div>
+			<?php the_tags(); ?>
 		</article>
 	</main>
 <?php
