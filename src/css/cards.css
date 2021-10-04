@@ -40,14 +40,18 @@
 .teaser-row .card-content:last-child p {
     margin-bottom: 1rem;
 }
+
+.teaser-row .card footer {
+    color: #888;
+}
+.teaser-row .card footer a {
+    color: inherit;
+}
+
 .teaser-row .card footer i {
     color: #888;
     vertical-align: middle;
     margin-right: .5rem;
-}
-
-.teaser-row .card footer a {
-    color: #888;
 }
 
 
