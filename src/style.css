@@ -51,6 +51,13 @@ p {
     hyphens: auto;
 }
 
+textarea {
+    border: 1px solid #aaa;
+    border-radius: .2rem;
+    resize:vertical;
+    padding: 1rem;
+}
+
 blockquote {
     border-left-color: #800;
 }
