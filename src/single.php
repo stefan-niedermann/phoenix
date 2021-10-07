@@ -30,8 +30,7 @@ while (have_posts()) : the_post();
 				</strong>
 			<?php endif; ?>
 			<div><?php the_content(); ?></div>
-			<?php the_tags(); ?>
-				<footer>
+			<footer>
 				<?php the_tags(); ?>
 				<?php
 					$author = sprintf(
@@ -60,7 +59,7 @@ while (have_posts()) : the_post();
 						}
 					}
 				?>
-				</footer>
+			</footer>
 		</article>
 	</main>
 <?php
