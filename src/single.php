@@ -32,6 +32,7 @@ while (have_posts()) : the_post();
 			<div><?php the_content(); ?></div>
 			<footer>
 				<?php the_tags(); ?>
+				<p>
 				<?php
 					$author = sprintf(
 						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author"><i class="material-icons">person</i>%3$s</a></span>',
@@ -59,6 +60,7 @@ while (have_posts()) : the_post();
 						}
 					}
 				?>
+				</p>
 			</footer>
 		</article>
 	</main>
