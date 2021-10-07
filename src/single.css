@@ -28,12 +28,17 @@ main article header h1 + p i.material-icons {
 	font-size: 1.4rem;
 }
 
-main footer {
+main footer p {
     display: flex;
     flex-wrap: wrap;
     column-gap: 1.5rem;
+	justify-content: center;
     font-size: small;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+main footer ul.tags {
+	justify-content: center;
 }
 
 main footer {
