@@ -43,6 +43,7 @@ if (window.speechSynthesis) {
 							${document.querySelector('main>article>div').innerText}
 						`);
 						utterance.voice = voice;
+						utterance.addEventListener('end', () => btn.click());
 						window.speechSynthesis.speak(utterance);
 						if (window._paq) {
 							_paq.push(['trackEvent', 'Speech Synthesis', 'Play']);
