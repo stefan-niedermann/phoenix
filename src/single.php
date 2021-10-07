@@ -1,6 +1,6 @@
 <?php
-wp_enqueue_style('single', get_template_directory_uri() . '/single.css');
-wp_enqueue_script('single', get_template_directory_uri() . '/single.js', array(), '0.0.1');
+wp_enqueue_style('single', get_template_directory_uri() . '/single.css', array(), '0.0.2');
+wp_enqueue_script('single', get_template_directory_uri() . '/single.js', array(), '0.0.2');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 
 /* Set News to current Menu Item */
@@ -23,30 +23,6 @@ while (have_posts()) : the_post();
 		<article>
 			<header>
 				<h1><?php echo the_title(); ?></h1>
-				<p class="grey-text">
-					<?php the_author(); ?> - <time class="tooltipped" data-tooltip="<?php printf(
-						__('Created on %1$s', 'phoenix'),
-						get_the_date("l, j. F Y, H:m")
-					); ?>" datetime="<?php echo get_the_date( "c" ) ?>"><?php the_date(); ?></time>
-					<?php if(is_user_logged_in()) { ?>
-						<a href="<?php echo get_edit_post_link(get_the_ID()) ?>"
-							style="color: inherit; margin-left: 1rem;"
-							class="tooltipped"
-							data-tooltip="<?php printf(
-								__('Last edited on %1$s', 'phoenix'),
-								the_modified_date("l, j. F Y, H:m")
-							) ?>">
-							<i class="material-icons">edit</i>
-						</a>
-					<?php
-						if(shortcode_exists('wp-piwik')) {
-							$hits = do_shortcode('[wp-piwik module="post" period="range" date="' . date('Y-m-d', get_post_timestamp()) . ',today" key="nb_hits"]');
-							if(intval($hits) > 1) { 
-								?><i class="material-icons" style="margin-left: 1rem; margin-right: .5rem;">visibility</i> <?php echo $hits; ?><?php
-							}
-						}
-					} ?>
-				</p>
 			</header>
 			<?php if (!empty($currentPost->post_excerpt)) : ?>
 				<strong>
@@ -55,6 +31,36 @@ while (have_posts()) : the_post();
 			<?php endif; ?>
 			<div><?php the_content(); ?></div>
 			<?php the_tags(); ?>
+				<footer>
+				<?php the_tags(); ?>
+				<?php
+					$author = sprintf(
+						'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author"><i class="material-icons">person</i>%3$s</a></span>',
+						esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+						esc_attr(sprintf(__('View all posts by %s', 'twentytwelve'), get_the_author())),
+						get_the_author()
+					);
+
+					$date = sprintf(
+						'<a href="%1$s" title="%2$s" rel="bookmark"><i class="material-icons">event</i><time class="entry-date" datetime="%3$s">%4$s</time></a>',
+						esc_url(get_permalink()),
+						esc_attr(get_the_time()),
+						esc_attr(get_the_date('c')),
+						esc_html(get_the_date())
+					);
+				?>
+				<?php echo $author; ?>
+				<span><i class="material-icons">folder_open</i><?php echo get_the_category_list(', '); ?></span>
+				<?php
+					echo $date;
+					if(is_user_logged_in() && shortcode_exists('wp-piwik')) {
+						$hits = do_shortcode('[wp-piwik module="post" period="range" date="' . date('Y-m-d', get_post_timestamp()) . ',today" key="nb_hits"]');
+						if(intval($hits) > 1) {
+							?><span><i class="material-icons">visibility</i> <?php echo $hits; ?></span><?php
+						}
+					}
+				?>
+				</footer>
 		</article>
 	</main>
 <?php

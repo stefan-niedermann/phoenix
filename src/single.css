@@ -27,3 +27,42 @@ main article header h1 + p time:last-of-type {
 main article header h1 + p i.material-icons {
 	font-size: 1.4rem;
 }
+
+main footer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    font-size: small;
+    margin-bottom: 1rem;
+}
+
+main footer {
+    color: #888;
+}
+main footer a {
+    color: inherit;
+}
+
+main footer i {
+    color: #888;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.speech-synthesis-control {
+	border: 1px solid #ccc;
+	background: none;
+	padding: 1rem;
+	border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: medium;
+}
+.speech-synthesis-control:focus,
+.speech-synthesis-control:hover {
+	background: none;
+	cursor: pointer;
+}
+.speech-synthesis-control i {
+	margin-right: .6rem;
+}
