@@ -43,7 +43,15 @@ if (window.speechSynthesis) {
 							${document.querySelector('main>article>div').innerText}
 						`);
 						utterance.voice = voice;
-						utterance.addEventListener('end', () => btn.click());
+						utterance.addEventListener('end', () => {
+							btn.classList.remove('speaking');
+							icon.innerText = 'play_arrow';
+							label.textContent = 'Artikel vorlesen';
+							window.speechSynthesis.cancel();
+							if (window._paq) {
+								_paq.push(['trackEvent', 'Speech Synthesis', 'Finished']);
+							}
+						});
 						window.speechSynthesis.speak(utterance);
 						if (window._paq) {
 							_paq.push(['trackEvent', 'Speech Synthesis', 'Play']);
