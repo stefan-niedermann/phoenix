@@ -31,6 +31,9 @@ if (window.speechSynthesis) {
 						icon.innerText = 'play_arrow';
 						label.textContent = 'Artikel vorlesen';
 						window.speechSynthesis.cancel();
+						if (window._paq) {
+							_paq.push(['trackEvent', 'Speech Synthesis', 'Cancel']);
+						}
 					} else {
 						btn.classList.add('speaking');
 						icon.innerText = 'stop';
@@ -41,6 +44,9 @@ if (window.speechSynthesis) {
 						`);
 						utterance.voice = voice;
 						window.speechSynthesis.speak(utterance);
+						if (window._paq) {
+							_paq.push(['trackEvent', 'Speech Synthesis', 'Play']);
+						}
 					}
 				});
 				document.querySelector('main>article>header').appendChild(btn);
