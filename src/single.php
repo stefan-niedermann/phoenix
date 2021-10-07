@@ -1,5 +1,5 @@
 <?php
-wp_enqueue_style('single', get_template_directory_uri() . '/single.css', array(), '0.0.3');
+wp_enqueue_style('single', get_template_directory_uri() . '/single.css', array(), '0.0.4');
 wp_enqueue_script('single', get_template_directory_uri() . '/single.js', array(), '0.0.3');
 wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
 
