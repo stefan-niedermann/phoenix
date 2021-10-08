@@ -102,4 +102,4 @@ jobs:
       - name: Rollback backup
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }} ${{ secrets.FTP_SERVER_DIR }}.bug; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
       - name: Restore old backup
-        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }}.old.bak ${{ secrets.FTP_SERVER_DIR }}.bak; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }}.bak.old ${{ secrets.FTP_SERVER_DIR }}.bak; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
