@@ -76,3 +76,17 @@ jobs:
       with:
         name: e2e-videos
         path: cypress/videos
+
+  deploy:
+    name: Rollback
+    runs-on: ubuntu-latest
+    needs: [e2e]
+    if: ${{ failure() }}
+    steps:
+      - name: Install lftp
+        run: sudo apt-get install lftp
+      - name: Remove old bug files if present
+        continue-on-error: true
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.bug; quit;" ${{ secrets.FTP_URL }}
+      - name: Rollback backup
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }} ${{ secrets.FTP_SERVER_DIR }}.bug; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
