@@ -6,8 +6,8 @@
   "scripts": {
     "build": "node build.js",
     "lint": "npm run lint-php && npm run lint-js",
-    "lint-php": "find . -name '*.php' -print0 | xargs -0 -n1 -P8 php -l",
-    "lint-js": "find . -name '*.js' -print0 | xargs -0 -n1 -P8 node --check",
+    "lint-php": "find ./src/ -name '*.php' -print0 | xargs -0 -n1 -P8 php -l",
+    "lint-js": "node --check build.js && find ./src/ -name '*.js' -print0 | xargs -0 -n1 -P8 node --check",
     "e2e": "npx cypress run"
   },
   "repository": {
