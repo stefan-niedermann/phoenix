@@ -52,4 +52,4 @@ get_header();
 		</div>
 	</div>
 </section>
-<?php get_footer();a ?>
+<?php get_footer(); ?>
