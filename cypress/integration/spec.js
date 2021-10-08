@@ -1,6 +1,8 @@
 describe('The Home Page', () => {
     it('successfully loads', () => {
-        cy.visit('/');
+        cy.visit('/', {
+            qs: {'donotcachepage': Cypress.env('CYPRESS_CACHE_BUSTER')}
+        });
 
         cy.contains('Feuerwehr Aurachhöhe');
         cy.contains('Unsere Freizeit für Ihre Sicherheit');
