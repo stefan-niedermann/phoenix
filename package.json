@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "lint": "npm run lint-php && npm run lint-js",
-    "lint-php": "find ./src/ -name '*.php' -print0 | xargs -0 -n1 -P8 php -l",
+    "lint-php": "find .src/ -name '*.php' -print0 | xargs -0 -n1 -P8 php -l",
     "lint-js": "node --check build.js && find ./src/ -name '*.js' -print0 | xargs -0 -n1 -P8 node --check",
     "e2e": "npx cypress run"
   },
@@ -28,10 +28,10 @@
   "homepage": "https://github.com/stefan-niedermann/phoenix#readme",
   "dependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
-    "cypress": "^8.5.0",
     "material-icons": "^1.8.1"
   },
   "devDependencies": {
-    "fs-extra": "^10.0.0"
+    "fs-extra": "^10.0.0",
+    "cypress": "^8.5.0"
   }
 }
