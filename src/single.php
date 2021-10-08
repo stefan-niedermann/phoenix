@@ -66,4 +66,4 @@ while (have_posts()) : the_post();
 	</main>
 <?php
 endwhile;
-get_footer(); ?>
+get_footer();a ?>
