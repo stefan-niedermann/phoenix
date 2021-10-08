@@ -84,6 +84,9 @@ jobs:
     steps:
       - name: Install lftp
         run: sudo apt-get install lftp
+      - name: Remove old bug files
+        continue-on-error: true
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.bug-*; quit;" ${{ secrets.FTP_URL }}
       - name: Remove old backup
         continue-on-error: true
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.old.bak; quit;" ${{ secrets.FTP_URL }}
@@ -96,10 +99,7 @@ jobs:
     steps:
       - name: Install lftp
         run: sudo apt-get install lftp
-      - name: Remove old bug files if present
-        continue-on-error: true
-        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.bug; quit;" ${{ secrets.FTP_URL }}
-      - name: Rollback backup
-        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }} ${{ secrets.FTP_SERVER_DIR }}.bug; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
+      - name: Rollback backup and preserve buggy bundle
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }} ${{ secrets.FTP_SERVER_DIR }}.bug-${{ github.sha }}; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
       - name: Restore old backup
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; mv ${{ secrets.FTP_SERVER_DIR }}.bak.old ${{ secrets.FTP_SERVER_DIR }}.bak; mv ${{ secrets.FTP_SERVER_DIR }}.bak ${{ secrets.FTP_SERVER_DIR }}; quit;" ${{ secrets.FTP_URL }}
