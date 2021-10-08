@@ -86,7 +86,7 @@ jobs:
         run: sudo apt-get install lftp
       - name: Remove old bug files
         continue-on-error: true
-        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.bug-*; quit;" ${{ secrets.FTP_URL }}
+        run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; glob -a mrm -r ${{ secrets.FTP_SERVER_DIR }}.bug-*; quit;" ${{ secrets.FTP_URL }}
       - name: Remove old backup
         continue-on-error: true
         run: lftp -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASSWORD }} -e "set ssl:verify-certificate no; rm -r ${{ secrets.FTP_SERVER_DIR }}.bak.old; quit;" ${{ secrets.FTP_URL }}
