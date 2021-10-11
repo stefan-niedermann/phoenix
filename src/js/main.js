@@ -15,10 +15,10 @@ try {
     }
     document.addEventListener('DOMContentLoaded', () => {
         Array
-            .from(document.getElementsByTagName(':not(.teaser-row) img'))
+            .from(document.querySelectorAll(':not(.teaser-row) img'))
             .forEach(img => disableContextMenu(img));
             Array
-                .from(document.getElementsByTagName('.teaser-row img'))
+                .from(document.querySelectorAll('.teaser-row img'))
                 .forEach(img => {
                     if(img.parentElement instanceof HTMLAnchorElement) {
                         img.addEventListener('contextmenu', (e) => {
