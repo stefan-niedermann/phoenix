@@ -31,7 +31,7 @@
 	wp_enqueue_style('materialize-css', get_template_directory_uri() . '/css/materialize.min.css', array(), '1.1.0');
 	wp_enqueue_style('main', get_template_directory_uri() . '/style.css', array(), '3.1.2');
 	wp_enqueue_script('materialize-js', get_template_directory_uri() . '/js/materialize.min.js', array(), '1.1.0');
-	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), '3.2.0');
+	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), '3.2.1');
 	?>
 	<?php wp_head(); ?>
 </head>

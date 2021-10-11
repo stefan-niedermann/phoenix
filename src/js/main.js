@@ -15,8 +15,20 @@ try {
     }
     document.addEventListener('DOMContentLoaded', () => {
         Array
-            .from(document.getElementsByTagName('img'))
+            .from(document.getElementsByTagName(':not(.teaser-row) img'))
             .forEach(img => disableContextMenu(img));
+            Array
+                .from(document.getElementsByTagName('.teaser-row img'))
+                .forEach(img => {
+                    if(img.parentElement instanceof HTMLAnchorElement) {
+                        img.addEventListener('contextmenu', (e) => {
+                            e.preventDefault()
+                            img.parentElement.click();
+                        }, false);
+                    } else {
+                        disableContextMenu(img);
+                    }
+                });
 
         new MutationObserver((mutations) => {
             mutations
