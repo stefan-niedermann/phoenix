@@ -127,7 +127,7 @@ img, video, figure {
 
 main {
     /* Ensure that footer is at the bottom, substracting header and footer height */
-    min-height: calc(100vh - 178px);
+    min-height: calc(100vh - 188px);
 }
 
 main .alignright {
