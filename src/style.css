@@ -125,6 +125,11 @@ img, video, figure {
     height: auto;
 }
 
+main {
+    /* Ensure that footer is at the bottom, substracting header and footer height */
+    min-height: calc(100vh - 178px);
+}
+
 main .alignright {
     float: right;
 }
