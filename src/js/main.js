@@ -10,6 +10,29 @@ try {
 }
 
 try {
+    document.addEventListener('DOMContentLoaded', () => {
+        Array.from(document.querySelectorAll('#nav-mobile > li, #slide-out > li'))
+        .filter(li => li.firstChild instanceof HTMLAnchorElement)
+        .filter(li => li.firstChild.firstChild)
+            .forEach(li => {
+                const icon = li.className
+                    .split(' ')
+                    .filter(clazz => clazz.startsWith('material-icons-'))
+                    .map(clazz => clazz.substr(15));
+                if (icon.length > 0) {
+                    const i = document.createElement('i');
+                    i.classList.add('material-icons');
+                    i.classList.add('left');
+                    i.appendChild(document.createTextNode(icon[0]));
+                    li.firstChild.insertBefore(i, li.firstChild.firstChild);
+                }
+            });
+    });
+} catch (e) {
+
+}
+
+try {
     const disableContextMenu = (elem) => {
         elem.addEventListener('contextmenu', (e) => e.preventDefault(), false);
     }
@@ -17,18 +40,18 @@ try {
         Array
             .from(document.querySelectorAll(':not(.teaser-row) img'))
             .forEach(img => disableContextMenu(img));
-            Array
-                .from(document.querySelectorAll('.teaser-row img'))
-                .forEach(img => {
-                    if(img.parentElement instanceof HTMLAnchorElement) {
-                        img.addEventListener('contextmenu', (e) => {
-                            e.preventDefault()
-                            img.parentElement.click();
-                        }, false);
-                    } else {
-                        disableContextMenu(img);
-                    }
-                });
+        Array
+            .from(document.querySelectorAll('.teaser-row img'))
+            .forEach(img => {
+                if (img.parentElement instanceof HTMLAnchorElement) {
+                    img.addEventListener('contextmenu', (e) => {
+                        e.preventDefault()
+                        img.parentElement.click();
+                    }, false);
+                } else {
+                    disableContextMenu(img);
+                }
+            });
 
         new MutationObserver((mutations) => {
             mutations
