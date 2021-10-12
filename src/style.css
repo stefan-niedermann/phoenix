@@ -155,6 +155,10 @@ main img.alignleft {
     z-index: 2;
 }
 
+.sidenav li {
+    width: 100%;
+}
+
 .navbar-fixed nav, .sidenav li:first-child {
     background-color: #400;
 }
