@@ -11,7 +11,7 @@ try {
 
 try {
     document.addEventListener('DOMContentLoaded', () => {
-        Array.from(document.querySelectorAll('#nav-mobile > li, #slide-out > li'))
+        Array.from(document.querySelectorAll('#nav-mobile > li, #slide-out > li, #menu-fussmenue-1 > li'))
         .filter(li => li.firstChild instanceof HTMLAnchorElement)
         .filter(li => li.firstChild.firstChild)
             .forEach(li => {
