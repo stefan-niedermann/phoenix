@@ -16,7 +16,8 @@ try {
             .filter(li => li.firstChild instanceof HTMLAnchorElement)
             .filter(li => li.firstChild.firstChild)
             .forEach(li => {
-                const icon = li.classList
+                const icon = li.className
+                    .split(' ')
                     .filter(clazz => clazz.startsWith('material-icons-'))
                     .map(clazz => clazz.substring(15))
                 if (icon.length > 0) {
