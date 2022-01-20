@@ -28,10 +28,10 @@
   "homepage": "https://github.com/stefan-niedermann/phoenix#readme",
   "dependencies": {
     "@materializecss/materialize": "^1.1.0-alpha",
-    "material-icons": "^1.9.1"
+    "material-icons": "^1.10.6"
   },
   "devDependencies": {
     "fs-extra": "^10.0.0",
-    "cypress": "^8.6.0"
+    "cypress": "^9.3.1"
   }
 }
