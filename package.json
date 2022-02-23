@@ -31,7 +31,7 @@
     "material-icons": "^1.10.7"
   },
   "devDependencies": {
-    "fs-extra": "^10.0.0",
+    "fs-extra": "^10.0.1",
     "cypress": "^9.5.0"
   }
 }
