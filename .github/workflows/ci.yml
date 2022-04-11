@@ -34,7 +34,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Stash bundle
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bundle
           path: ./dist
@@ -72,7 +72,7 @@ jobs:
     - name: Run E2E Tests
       run: npm run e2e -- --config baseUrl=${{ secrets.CYPRESS_BASE_URL }},blockHosts=${{ secrets.CYPRESS_BLOCK_HOSTS }} --env WP_SUPER_CACHE_BUSTER=${{ secrets.CYPRESS_CACHE_BUSTER }}
     - name: Upload videos
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: e2e-videos
         path: cypress/videos
