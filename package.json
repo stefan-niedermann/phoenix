@@ -32,6 +32,6 @@
   },
   "devDependencies": {
     "fs-extra": "^10.1.0",
-    "cypress": "^9.6.0"
+    "cypress": "^9.6.1"
   }
 }
