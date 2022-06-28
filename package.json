@@ -28,7 +28,7 @@
   "homepage": "https://github.com/stefan-niedermann/phoenix#readme",
   "dependencies": {
     "@materializecss/materialize": "^1.1.0",
-    "material-icons": "^1.11.2"
+    "material-icons": "^1.11.3"
   },
   "devDependencies": {
     "fs-extra": "^10.1.0",
