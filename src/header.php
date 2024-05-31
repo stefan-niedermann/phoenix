@@ -5,6 +5,7 @@
 	<title><?php if(!is_front_page()) { wp_title("-", true, "right"); } ?> <?php bloginfo('name') ?></title>
 	<meta content="<?php bloginfo('name');  ?>" />
 	<meta charset="<?php bloginfo("charset"); ?>" />
+	<meta name="view-transition" content="same-origin">
 	<meta name="viewport" content="width=device-width" />
 	<meta name="theme-color" content="#440000" />
 	<meta property="og:site_name" content="<?php bloginfo('name');  ?>" />
