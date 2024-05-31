@@ -7,7 +7,7 @@ $requestedYear = get_the_date(_x('Y', 'yearly archives date format', 'phoenix'))
 
 /*if($requestedYear == 2017) {
 	header("HTTP/1.1 302 Found");
-	header("Location: http://www.feuerwehr-aurachhöhe.de/news/2016");
+	header("Location: http://www.feuerwehr-aurachhoehe.de/news/2016");
 	exit();
 }*/
 

@@ -16,7 +16,7 @@
 	$og_image_url = get_the_post_thumbnail_url();
 	if (empty($og_image_url)) {
 		// TODO remove hard coded string, maybe we can get the featured image of the homepage?
-		$og_image_url = 'https://www.feuerwehr-aurachhöhe.de/wp-content/uploads/2016/08/apple-touch-icon-180x180.png';
+		$og_image_url = 'https://www.feuerwehr-aurachhoehe.de/wp-content/uploads/2016/08/apple-touch-icon-180x180.png';
 	}
 	?>
 	<meta property="og:image" content="<?php echo $og_image_url ?>" />
