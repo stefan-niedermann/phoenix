@@ -10,6 +10,10 @@
  * Text Domain: phoenix
  */
 
+@view-transition {
+    navigation: auto;
+}
+
 /* Material icons */
 
 @font-face {
