@@ -6,7 +6,7 @@
 }
 
 body {
-
+/*
     .navbar-fixed nav,
     .sidenav li:first-child {
         background-color: var(--150-r)
@@ -16,7 +16,7 @@ body {
     .nav-wrapper .current_page_item {
         background-color: var(--150-r-variant)
     }
-
+*/
     .sidenav-trigger {
         display: flex;
         gap: 1.3rem;
@@ -29,8 +29,9 @@ body {
             display: none;
         }
     }
-
+/*
     &>footer.section {
         background-color: var(--150-r);
     }
+*/
 }
