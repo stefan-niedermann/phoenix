@@ -11,12 +11,12 @@ get_header();
     <style>
         @font-face {
             font-family: RubikDirt;
-            src: url(<?php echo get_template_directory_uri() . '/fonts/RubikDirt-Regular.ttf' ?>);
+            src: url(<?php echo get_template_directory_uri() ?>/fonts/RubikDirt-Regular.ttf);
         }
 
         @font-face {
             font-family: Katibeh;
-            src: url(<?php echo get_template_directory_uri() . '/fonts/Katibeh-Regular.ttf' ?>);
+            src: url(<?php echo get_template_directory_uri() ?>/fonts/Katibeh-Regular.ttf);
         }
     </style>
     <h1>150 Jah&shy;re Feuer&shy;wehr<br><span>Barthelmesaurach</span></h1>
@@ -31,7 +31,7 @@ get_header();
                 <h3>Freitag, 8. Mai</h3>
                 <p>
                     <em>Eintritt frei!</em>
-                    <img src="members.png" alt="Logo der Band Members">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
                 </p>
                 <ul>
                     <li>19:30 Uhr: Bieranstich durch Bürgermeister</li>
@@ -42,7 +42,7 @@ get_header();
                 <h3>Samstag, 9. Mai</h3>
                 <p>
                     <em>Eintritt frei!</em>
-                    <img src="klostergold.png" alt="Logo der Band Klostergold">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
                 </p>
                 <ul>
                     <li>17:00 Uhr: Festumzug</li>
@@ -54,7 +54,7 @@ get_header();
                 <h3>Sonntag, 10. Mai</h3>
                 <p>
                     <em>Eintritt frei!</em>
-                    <img src="blechglanz.avif" alt="Logo der Band Blechglanz">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.avif" alt="Logo der Band Blechglanz">
                 </p>
                 <ul>
                     <li>9:30 Uhr: Festgottesdienst mit Fahnenweihe</li>
