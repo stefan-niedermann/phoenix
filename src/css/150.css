@@ -2,6 +2,7 @@ main {
     --b: hsl(0, 0%, 0%);
     --y: hsl(40, 100%, 60%);
     --r: hsl(0, 100%, 33%);
+    --r-variant: hsl(0, 100%, 20%);
     --spacer: 2rem;
 
     color-scheme: light dark;

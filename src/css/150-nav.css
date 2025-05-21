@@ -1,0 +1,9 @@
+/** Patches the default navbar and footer colors to match 150 anniversary style */
+
+.navbar-fixed nav, .sidenav li:first-child {
+    background-color: var(--r)
+}
+
+.nav-wrapper .current-menu-item, .nav-wrapper .current_page_item {
+    background-color: var(--r-variant)
+}
