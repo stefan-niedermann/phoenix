@@ -4,7 +4,7 @@
  * Spezialisiertes Template für 150 Jahre Jubiläum
  */
 wp_enqueue_style('150', get_template_directory_uri() . '/css/150.css');
-wp_enqueue_style('150', get_template_directory_uri() . '/css/150-nav.css');
+wp_enqueue_style('150-nav', get_template_directory_uri() . '/css/150-nav.css');
 
 get_header();
 ?>
