@@ -1,6 +1,7 @@
 :root {
     --150-b: hsl(0, 0%, 0%);
     --150-y: hsl(40, 100%, 60%);
+    --150-y: hsl(.11turn, 99%, 65%);
     --150-r: hsl(0, 100%, 33%);
     --150-r-variant: hsl(0, 100%, 20%);
 }
@@ -27,7 +28,7 @@ main {
         word-wrap: break-word;
         width: max(100%, 10rem);
 
-        >* {
+        >.optional {
             display: none;
         }
 
@@ -38,7 +39,7 @@ main {
         @media (min-width: 1920px) {
             font-size: 9rem;
 
-            >* {
+            >.optional {
                 display: inherit;
             }
         }
@@ -77,8 +78,10 @@ main {
 
     hr {
         width: 50%;
-        color: var(--150-y);
+        height: .2rem;
+        background-color: var(--150-y);
         margin: 4rem auto;
+        border: 0;
     }
 
     iframe {

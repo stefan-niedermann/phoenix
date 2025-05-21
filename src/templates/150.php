@@ -20,7 +20,7 @@ get_header();
             src: url(<?php echo get_template_directory_uri() ?>/fonts/Katibeh-Regular.ttf);
         }
     </style>
-    <h1>150 Jahre Feuer&shy;wehr<br><span>Barthel&shy;mes&shy;aurach</span></h1>
+    <h1><span style="hyphens: none;">150 Jahre</span> Feuerwehr<br class="optional"><span class="optional">Barthel&shy;mes&shy;aurach</span></h1>
     <hr>
     <section>
         <strong id="datum">8. - 10. Mai 2026</strong>
