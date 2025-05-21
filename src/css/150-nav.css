@@ -14,7 +14,7 @@
         background-color: var(--150-r-variant)
     }
 
-    body>footer {
+    &>footer {
         background-color: var(--150-r);
     }
 }
