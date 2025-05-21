@@ -140,7 +140,6 @@ main {
         padding: var(--spacer);
         color: var(--150-y);
         position: relative;
-        font-weight: 600;
         display: flex;
         flex-direction: column;
 
@@ -149,6 +148,12 @@ main {
         }
 
         img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+        
+        >:last-child::before {
             flex: 1 0 auto;
         }
 
@@ -166,12 +171,6 @@ main {
             position: absolute;
             top: calc(var(--spacer) / -1.5);
             right: calc(var(--spacer) / -1.5);
-        }
-
-        img {
-            display: block;
-            margin: auto;
-            max-width: 100%;
         }
     }
 }

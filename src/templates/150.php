@@ -34,9 +34,9 @@ get_header();
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
                 <dl>
                     <dt>19:30 Uhr</dt>
-                    <dd>Bieranstich durch Bürgermeister</dl>
+                    <dd><strong>Bieranstich</strong> durch Bürgermeister</dd>
                     <dt>20:00 Uhr</dt>
-                    <dd>Eröffnungsparty mit den Members</dl>
+                    <dd>Eröffnungsparty mit den <strong><a href="https://members-live.de/">Members</a></strong></dd>
                 </dl>
             </article>
             <article>
@@ -44,9 +44,9 @@ get_header();
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
                 <dl>
-                    <dt>17:00 Uhr</dt><dd>Festumzug</dd>
+                    <dt>17:00 Uhr</dt><dd><strong>Festumzug</strong></dd>
                     <dt>18:00 Uhr</dt><dd>Fahneneinmarsch</dd>
-                    <dt>im Anschluss</dt><dd>Party mit Klostergold</dd>
+                    <dt>im Anschluss</dt><dd>Party mit <strong><a href="https://klostergold.de/">Klostergold</a></strong></dd>
                 </dl>
             </article>
             <article>
@@ -55,9 +55,9 @@ get_header();
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.png" alt="Logo der Band Blechglanz">
                 <dl>
                     <dt>9:30 Uhr</dt>
-                    <dd>Festgottesdienst mit Fahnenweihe</dd>
+                    <dd><strong>Festgottesdienst</strong> mit <strong>Fahnenweihe</strong></dd>
                     <dt>11:30 Uhr</dt>
-                    <dd>Stimmungsmusik mit Blechglanz</dd>
+                    <dd>Stimmungsmusik mit <strong><a href="https://www.blechglanz.net/">Blechglanz</a></strong></dd>
                     <dt>ab 15:00 Uhr</dt>
                     <dd>Kaffee & Kuchen</dd>
                 </dl>
