@@ -11,12 +11,12 @@ get_header();
     <style>
         @font-face {
             font-family: RubikDirt;
-            src: url(<?php get_template_directory_uri() . '/fonts/RubikDirt-Regular.ttf' ?>);
+            src: url(<?php echo get_template_directory_uri() . '/fonts/RubikDirt-Regular.ttf' ?>);
         }
 
         @font-face {
             font-family: Katibeh;
-            src: url(<?php get_template_directory_uri() . '/fonts/Katibeh-Regular.ttf' ?>);
+            src: url(<?php echo get_template_directory_uri() . '/fonts/Katibeh-Regular.ttf' ?>);
         }
     </style>
     <h1>150 Jah&shy;re Feuer&shy;wehr<br><span>Barthelmesaurach</span></h1>
