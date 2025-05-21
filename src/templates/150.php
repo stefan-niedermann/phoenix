@@ -59,7 +59,7 @@ get_header();
             </article>
         </div>
     </section>
-    <section>
+    <section class="narrow">
         <h2>Anfahrt</h2>
         <p>Direkt neben dem Festzelt befindet sich eine ausgewiesene Parkfläche.</p>
         <h3>Von der B 466 kommend</h3>
