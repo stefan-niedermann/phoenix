@@ -5,12 +5,15 @@
     background: var(--150-r);
 }
 
-.page-template-150 {
-    .navbar-fixed nav, .sidenav li:first-child {
+body {
+
+    .navbar-fixed nav,
+    .sidenav li:first-child {
         background-color: var(--150-r)
     }
 
-    .nav-wrapper .current-menu-item, .nav-wrapper .current_page_item {
+    .nav-wrapper .current-menu-item,
+    .nav-wrapper .current_page_item {
         background-color: var(--150-r-variant)
     }
 
@@ -19,10 +22,10 @@
         gap: 1.3rem;
 
         &::after {
-           content: "Feuerwehr Barthelmesaurach e. V.";
+            content: "Feuerwehr Barthelmesaurach e. V.";
         }
 
-        + a {
+        +a {
             display: none;
         }
     }
