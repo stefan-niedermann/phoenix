@@ -1,5 +1,10 @@
 /** Patches the default navbar and footer colors to match 150 anniversary style */
 
+::selection {
+    color: var(--150-y);
+    background: var(--150-r);
+}
+
 .page-template-150 {
     .navbar-fixed nav, .sidenav li:first-child {
         background-color: var(--150-r)
@@ -7,5 +12,9 @@
 
     .nav-wrapper .current-menu-item, .nav-wrapper .current_page_item {
         background-color: var(--150-r-variant)
+    }
+
+    body>footer {
+        background-color: var(--150-r);
     }
 }
