@@ -50,7 +50,7 @@ get_header();
             <article>
                 <h3>Sonntag, 10. Mai</h3>
                 <em>Eintritt frei!</em>
-                <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.avif" alt="Logo der Band Blechglanz">
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.png" alt="Logo der Band Blechglanz">
                 <ul>
                     <li>9:30 Uhr: Festgottesdienst mit Fahnenweihe</li>
                     <li>11:30 Uhr: Stimmungsmusik mit Blechglanz</li>

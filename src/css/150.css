@@ -22,7 +22,7 @@ main {
 
     h1 {
         font-family: RubikDirt;
-        margin: 0;
+        margin: var(--spacer) 0;
         font-size: 5rem;
         font-weight: normal;
         text-transform: uppercase;
@@ -110,7 +110,7 @@ main {
 
     section {
         max-width: 1280px;
-        margin: auto auto calc(var(--spacer) * 3) auto;
+        margin: auto auto calc(var(--spacer) * 2) auto;
 
         &.narrow p {
             max-width: 30rem;
