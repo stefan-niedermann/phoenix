@@ -30,10 +30,8 @@ get_header();
         <div class="flex-container">
             <article>
                 <h3>Freitag, 8. Mai</h3>
-                <p>
-                    <em>Eintritt frei!</em>
-                    <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
-                </p>
+                <em>Eintritt frei!</em>
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
                 <ul>
                     <li>19:30 Uhr: Bieranstich durch Bürgermeister</li>
                     <li>20:00 Uhr: Eröffnungsparty mit den Members</li>
@@ -41,10 +39,8 @@ get_header();
             </article>
             <article>
                 <h3>Samstag, 9. Mai</h3>
-                <p>
-                    <em>Eintritt frei!</em>
-                    <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
-                </p>
+                <em>Eintritt frei!</em>
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
                 <ul>
                     <li>17:00 Uhr: Festumzug</li>
                     <li>18:00 Uhr: Fahneneinmarsch</li>
@@ -53,10 +49,8 @@ get_header();
             </article>
             <article>
                 <h3>Sonntag, 10. Mai</h3>
-                <p>
-                    <em>Eintritt frei!</em>
-                    <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.avif" alt="Logo der Band Blechglanz">
-                </p>
+                <em>Eintritt frei!</em>
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.avif" alt="Logo der Band Blechglanz">
                 <ul>
                     <li>9:30 Uhr: Festgottesdienst mit Fahnenweihe</li>
                     <li>11:30 Uhr: Stimmungsmusik mit Blechglanz</li>

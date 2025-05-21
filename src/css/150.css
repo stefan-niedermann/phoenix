@@ -15,6 +15,7 @@ main {
     min-height: 100vh;
     padding: var(--spacer);
     line-height: 1.3;
+    font-size: large;
 
     h1 {
         font-family: RubikDirt;
@@ -47,7 +48,7 @@ main {
         margin: 0;
         margin-bottom: calc(var(--spacer) * 2);
         text-align: center;
-        font-family: Katisbeh;
+        font-family: Katibeh;
         font-size: 2.2rem;
 
         @media (min-width: 640px) {
@@ -62,7 +63,6 @@ main {
     h3 {
         margin: 0;
         text-align: center;
-        font-family: Katibeh;
         font-size: 2.2rem;
 
         @media (min-width: 640px) {
@@ -126,10 +126,15 @@ main {
         color: var(--150-y);
         position: relative;
         font-weight: 600;
-        font-size: large;
+        display: flex;
+        flex-direction: column;
 
         @media (min-width: 764px) {
             flex: 1 1 calc(100%/3);
+        }
+
+        img {
+            flex: 1 0 auto;
         }
 
         em {
