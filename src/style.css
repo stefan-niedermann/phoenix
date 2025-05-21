@@ -155,6 +155,17 @@ main img.alignleft {
     margin: 1rem 1rem 1rem 0;
 }
 
+@media (max-width: 1390px) {
+    #nav-mobile {
+        display: flex;
+        justify-content: center;
+        
+        li {
+            flex: 1 0 auto;
+        }
+    }
+}
+
 .navbar-fixed {
     z-index: 2;
 }
