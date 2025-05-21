@@ -2,10 +2,10 @@
 
 .page-template-150 {
     .navbar-fixed nav, .sidenav li:first-child {
-        background-color: var(--r)
+        background-color: var(--150-r)
     }
 
     .nav-wrapper .current-menu-item, .nav-wrapper .current_page_item {
-        background-color: var(--r-variant)
+        background-color: var(--150-r-variant)
     }
 }
