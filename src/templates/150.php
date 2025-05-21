@@ -67,10 +67,12 @@ get_header();
     </section>
     <section>
         <h2>Anfahrt</h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d818.9529535824391!2d10.93142323620655!3d49.277437699719485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sde!2sde!4v1747812934079!5m2!1sde!2sde"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>Direkt neben dem Festzelt befindet sich eine ausgewiesene Parkfläche.</p>
+        <h3>Von der B 466 kommend</h3>
+        <p>Fahren Sie an der Abfahrt Barthelmesaurach ab und biegen Sie direkt im Anschluss rechts ab. Fahren Sie am Feuerwehrhaus vorbei, das Festzelt steht an der rechten Seite.</p>
+        <h3>Von Mildach / Abenberg kommend</h3>
+        <p>Da einige Straßen für den Festumzug gesperrt werden, fahren Sie am Besten über Kammerstein auf die B 466 auf</p>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=10.929526984691622%2C49.27688903652725%2C10.93400627374649%2C49.2784394096516&amp;layer=mapnik"></iframe>
     </section>
 </main>
 <?php get_footer(); ?>
