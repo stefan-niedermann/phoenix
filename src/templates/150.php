@@ -32,30 +32,35 @@ get_header();
                 <h3>Freitag, 8. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
-                <ul>
-                    <li>19:30 Uhr: Bieranstich durch Bürgermeister</li>
-                    <li>20:00 Uhr: Eröffnungsparty mit den Members</li>
-                </ul>
+                <dl>
+                    <dt>19:30 Uhr</dt>
+                    <dd>Bieranstich durch Bürgermeister</dl>
+                    <dt>20:00 Uhr</dt>
+                    <dd>Eröffnungsparty mit den Members</dl>
+                </dl>
             </article>
             <article>
                 <h3>Samstag, 9. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
-                <ul>
-                    <li>17:00 Uhr: Festumzug</li>
-                    <li>18:00 Uhr: Fahneneinmarsch</li>
-                    <li>im Anschluss: Party mit Klostergold</li>
-                </ul>
+                <dl>
+                    <dt>17:00 Uhr</dt><dd>Festumzug</dd>
+                    <dt>18:00 Uhr</dt><dd>Fahneneinmarsch</dd>
+                    <dt>im Anschluss</dt><dd>Party mit Klostergold</dd>
+                </dl>
             </article>
             <article>
                 <h3>Sonntag, 10. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.png" alt="Logo der Band Blechglanz">
-                <ul>
-                    <li>9:30 Uhr: Festgottesdienst mit Fahnenweihe</li>
-                    <li>11:30 Uhr: Stimmungsmusik mit Blechglanz</li>
-                    <li>ab 15:00 Uhr: Kaffee & Kuchen</li>
-                </ul>
+                <dl>
+                    <dt>9:30 Uhr</dt>
+                    <dd>Festgottesdienst mit Fahnenweihe</dd>
+                    <dt>11:30 Uhr</dt>
+                    <dd>Stimmungsmusik mit Blechglanz</dd>
+                    <dt>ab 15:00 Uhr</dt>
+                    <dd>Kaffee & Kuchen</dd>
+                </dl>
             </article>
         </div>
     </section>
