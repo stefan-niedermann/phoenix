@@ -30,7 +30,7 @@ body {
         }
     }
 
-    &>footer {
+    &>footer.section {
         background-color: var(--150-r);
     }
 }
