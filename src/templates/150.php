@@ -85,7 +85,7 @@ get_header(); ?>
 	<section>
 <?php if ( have_posts() ) { ?>
 	<?php while ( have_posts() ) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(array('flow-text', 'white-text')); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(array('flow-text')); ?>>
 			<h1 class="section center"><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 		</article>
