@@ -29,6 +29,10 @@ body {
             display: none;
         }
     }
+
+    figcaption {
+        color: #ccc;
+    }
 /*
     &>footer.section {
         background-color: var(--150-r);

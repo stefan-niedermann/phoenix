@@ -3,11 +3,20 @@
  * Template Name: 150 Jahre Jubiläum
  * Spezialisiertes Template für 150 Jahre Jubiläum
  */
+wp_enqueue_style('index', get_template_directory_uri() . '/index.css');
+
+$currentPost = get_post();
+$customValues = get_post_custom_values("Post Teaser Kategorie", $currentPost->ID);
+
+if(!empty($customValues) && count($customValues) > 0) {
+	wp_enqueue_style('cards', get_template_directory_uri() . '/css/cards.css');
+	wp_enqueue_style('tags', get_template_directory_uri() . '/css/tags.css');
+}
+
 wp_enqueue_style('150', get_template_directory_uri() . '/css/150.css');
 wp_enqueue_style('150-nav', get_template_directory_uri() . '/css/150-nav.css');
 
-get_header();
-?>
+get_header(); ?>
 <main>
     <style>
         @font-face {
@@ -28,7 +37,7 @@ get_header();
     <section>
         <h2>Programm</h2>
         <div class="flex-container">
-            <article>
+            <article class="teaser-150">
                 <h3>Freitag, 8. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
@@ -39,7 +48,7 @@ get_header();
                     <dd>Eröffnungsparty mit den <strong><a href="https://members-live.de/">Members</a></strong></dd>
                 </dl>
             </article>
-            <article>
+            <article class="teaser-150">
                 <h3>Samstag, 9. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/klostergold.png" alt="Logo der Band Klostergold">
@@ -49,7 +58,7 @@ get_header();
                     <dt>im Anschluss</dt><dd>Party mit <strong><a href="https://klostergold.de/">Klostergold</a></strong></dd>
                 </dl>
             </article>
-            <article>
+            <article class="teaser-150">
                 <h3>Sonntag, 10. Mai</h3>
                 <em>Eintritt frei!</em>
                 <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.png" alt="Logo der Band Blechglanz">
@@ -73,5 +82,33 @@ get_header();
         <p>Da einige Straßen für den Festumzug gesperrt werden, fahren Sie am Besten über Kammerstein auf die B 466 auf</p>
         <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=10.929526984691622%2C49.27688903652725%2C10.93400627374649%2C49.2784394096516&amp;layer=mapnik"></iframe>
     </section>
+	<section>
+<?php if ( have_posts() ) { ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(array('flow-text', 'white-text')); ?>>
+			<h1 class="section center"><?php the_title(); ?></h1>
+			<?php the_content(); ?>
+		</article>
+
+		<?php if (comments_open()) {
+			comment_form();  ?>
+			<ol class="commentlist">
+				<?php comments_template(); ?>
+			</ol>
+
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+			<nav id="comment-nav-below" class="navigation" role="navigation">
+				<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'twentytwelve' ); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentytwelve' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'twentytwelve' ) ); ?></div>
+			</nav>
+			<?php endif;
+		}
+	endwhile;
+}
+?>
+	</section>
 </main>
-<?php get_footer(); ?>
+<?php
+	get_footer();
+?>
