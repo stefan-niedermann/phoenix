@@ -40,7 +40,7 @@ get_header(); ?>
             <article class="teaser-150">
                 <h3>Freitag, 8. Mai</h3>
                 <em>Eintritt frei!</em>
-                <img src="<?php echo get_template_directory_uri() ?>/img/150/members.png" alt="Logo der Band Members">
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/members.svg" alt="Logo der Band Members">
                 <dl>
                     <dt>19:30 Uhr</dt>
                     <dd><strong>Bieranstich</strong> durch Bürgermeister</dd>
@@ -61,12 +61,14 @@ get_header(); ?>
             <article class="teaser-150">
                 <h3>Sonntag, 10. Mai</h3>
                 <em>Eintritt frei!</em>
-                <img src="<?php echo get_template_directory_uri() ?>/img/150/blechglanz.png" alt="Logo der Band Blechglanz">
+                <img src="<?php echo get_template_directory_uri() ?>/img/150/blasorchester-georgensgmuend.png" alt="Logo des Blasorchesters Georgensgmünd">
                 <dl>
                     <dt>9:30 Uhr</dt>
-                    <dd><strong>Festgottesdienst</strong> mit <strong>Fahnenweihe</strong></dd>
-                    <dt>11:30 Uhr</dt>
-                    <dd>Stimmungsmusik mit <strong><a href="https://www.blechglanz.net/">Blechglanz</a></strong></dd>
+                    <dd><strong>Festgottesdienst</strong></dd>
+                    <dt>im Anschluss</dt>
+                    <dd><strong>Kreativmarkt</strong></dd>
+                    <dt>ab 12:00 Uhr</dt>
+                    <dd>Stimmungsmusik mit dem <strong><a href="https://www.blasorchester-georgensgmuend.de/">Blasorchester Georgensgmünd</a></strong></dd>
                     <dt>ab 15:00 Uhr</dt>
                     <dd>Kaffee & Kuchen</dd>
                 </dl>
