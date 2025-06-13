@@ -150,6 +150,7 @@ main {
     article.teaser-150 {
         color: var(--150-y);
         background-color: var(--150-r);
+        background-image: linear-gradient(145deg, var(--150-r), #200);
         border: .5rem solid var(--150-y);
         border-radius: .3rem;
         padding: var(--spacer);
@@ -169,6 +170,16 @@ main {
             display: block;
             margin: auto;
             max-width: 100%;
+        }
+        
+        @media (min-width: 764px) {
+            display: block;
+            
+            img {
+                aspect-ratio: 1/1;
+                width: 100%;
+                object-fit: contain;
+            }
         }
         
         >:last-child::before {

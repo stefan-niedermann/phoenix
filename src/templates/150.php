@@ -66,9 +66,7 @@ get_header(); ?>
                     <dt>9:30 Uhr</dt>
                     <dd><strong>Festgottesdienst</strong></dd>
                     <dt>im Anschluss</dt>
-                    <dd><strong>Kreativmarkt</strong></dd>
-                    <dt>ab 12:00 Uhr</dt>
-                    <dd>Stimmungsmusik mit dem <strong><a href="https://www.blasorchester-georgensgmuend.de/">Blasorchester Georgensgmünd</a></strong></dd>
+                    <dd><strong>Kreativmarkt</strong> und Stimmungsmusik mit dem <strong><a href="https://www.blasorchester-georgensgmuend.de/">Blasorchester Georgensgmünd</a></strong></dd>
                     <dt>ab 15:00 Uhr</dt>
                     <dd>Kaffee & Kuchen</dd>
                 </dl>
